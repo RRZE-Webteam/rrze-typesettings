@@ -1,0 +1,23 @@
+{
+    "author": "RRZE Webteam",
+    "license": "GPL-2.0-or-later",
+    "name": "rrze-typesettings",
+    "dependencies": {
+        "jquery": "^3.6.4",
+        "katex": "^0.16.7",
+        "prismjs": "^1.29.0"
+    },
+    "scripts": {
+        "build": "wp-scripts build && npm run minify-js && npm run minify-css && npm run copy-assets",
+        "start": "wp-scripts start",
+        "minify-js": "mkdir -p assets/js && for file in src/js/*.js; do uglifyjs \"$file\" -o \"assets/js/$(basename \"$file\" .js).min.js\"; done",
+        "minify-css": "mkdir -p assets/css && for file in src/css/*.css; do cssnano \"$file\" \"assets/css/$(basename \"$file\" .css).min.css\"; done",
+        "copy-assets": "cp node_modules/katex/dist/katex.min.css assets/css/ && cp node_modules/katex/dist/katex.min.js assets/js/ && cp node_modules/katex/dist/contrib/auto-render.min.js assets/js/ && cp node_modules/prismjs/themes/prism.css assets/css/ && cp node_modules/prismjs/prism.js assets/js/"
+    },
+    "devDependencies": {
+        "@wordpress/scripts": "^26.12.0",
+        "cpy-cli": "^4.0.1",
+        "uglify-js": "^3.17.4",
+        "cssnano-cli": "latest"
+    }
+}

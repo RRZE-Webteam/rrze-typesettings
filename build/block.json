@@ -1,0 +1,20 @@
+{
+  "apiVersion": 2,
+  "name": "create-block/rrze-typesettings",
+  "title": "Typesettings RRZE",
+  "category": "common",
+  "icon": "editor-code",
+  "description": "format content using LaTeX (resp KaTeX) and Code Highlightening",
+  "supports": {
+    "html": false
+  },
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "p"
+    }
+  },
+  "editorScript": "file:./index.js",
+  "textdomain": "rrze-typesettings"
+}
