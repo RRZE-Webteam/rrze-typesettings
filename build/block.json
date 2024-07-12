@@ -1,7 +1,7 @@
 {
   "apiVersion": 2,
   "name": "create-block/rrze-typesettings",
-  "title": "typesettings-RRZE",
+  "title": "typesettings-rrze",
   "category": "common",
   "icon": "editor-code",
   "description": "format content using LaTeX (resp KaTeX) and Code Highlightening",
