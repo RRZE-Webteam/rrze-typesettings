@@ -4,7 +4,7 @@
 Plugin Name:     RRZE Typesettings
 Plugin URI:      https://gitlab.rrze.fau.de/rrze-webteam/rrze-qr
 Description:     WordPress plugin to format content using LaTeX (resp KaTeX) and Code Highlightening
-Version:         0.0.2
+Version:         0.0.3
 Requires at least: 6.4
 Requires PHP:      8.2
 Author:          RRZE Webteam
@@ -103,6 +103,10 @@ function deactivation()
 }
 
 
+function block_init()
+{
+	register_block_type( __DIR__ . '/build' );
+}
 
 
 /**
@@ -127,6 +131,8 @@ function loaded()
         // Hauptklasse (Main) wird instanziiert.
         $main = new Main(__FILE__);
         $main->onLoaded();
+
+        add_action('init', __NAMESPACE__ . '\block_init');
     }
 }
 
