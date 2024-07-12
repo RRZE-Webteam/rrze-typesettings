@@ -1,7 +1,8 @@
 {
-  "apiVersion": 2,
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
   "name": "create-block/rrze-typesettings",
-  "title": "typesettings-rrze",
+  "title": "Typesettings RRZE",
   "category": "common",
   "icon": "editor-code",
   "description": "format content using LaTeX (resp KaTeX) and Code Highlightening",
