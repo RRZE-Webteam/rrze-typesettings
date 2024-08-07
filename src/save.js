@@ -1,6 +1,13 @@
-import { RichText } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
+import { createElement as el } from '@wordpress/element';
 
-const Save = ({ attributes }) => {
-    return <RichText.Content tagName="p" value={attributes.content} className="rrze-typesettings-block" />;
-}
+const Save = (props) => {
+    const { attributes: { content, alignment } } = props;
+    return el(
+        'pre',
+        { style: { textAlign: alignment } },
+        el('code', null, content)
+    );
+};
+
 export default Save;

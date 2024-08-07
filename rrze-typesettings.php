@@ -2,9 +2,9 @@
 
 /*
 Plugin Name:     RRZE Typesettings
-Plugin URI:      https://gitlab.rrze.fau.de/rrze-webteam/rrze-qr
-Description:     WordPress plugin to format content using LaTeX (resp KaTeX) and Code Highlightening
-Version:         0.0.3
+Plugin URI:      https://github.com/RRZE-Webteam/rrze-typesettings/
+Description:     Plugin zur Darstellung von Code und Formeln
+Version:         0.0.4
 Requires at least: 6.4
 Requires PHP:      8.2
 Author:          RRZE Webteam
@@ -13,12 +13,13 @@ License:         GNU General Public License v2
 License URI:     http://www.gnu.org/licenses/gpl-2.0.html
 Domain Path:     /languages
 Text Domain:     rrze-typesettings
-*/
+ */
 
 namespace RRZE\Typesettings;
 
 defined('ABSPATH') || exit;
 
+require_once 'config/config.php';
 const RRZE_PHP_VERSION = '8.2';
 const RRZE_WP_VERSION = '6.4';
 
@@ -56,7 +57,7 @@ add_action('plugins_loaded', __NAMESPACE__ . '\loaded');
  */
 function load_textdomain()
 {
-    load_plugin_textdomain('rrze-qr', false, sprintf('%s/languages/', dirname(plugin_basename(__FILE__))));
+    load_plugin_textdomain('rrze-typesettings', false, sprintf('%s/languages/', dirname(plugin_basename(__FILE__))));
 }
 
 /**
@@ -93,6 +94,7 @@ function activation()
 
     // Ab hier können die Funktionen hinzugefügt werden,
     // die bei der Aktivierung des Plugins aufgerufen werden müssen.
+    // Bspw. wp_schedule_event, flush_rewrite_rules, etc.
 }
 
 /**
@@ -103,11 +105,10 @@ function deactivation()
 }
 
 
-function block_init()
+function rrze_designsystem_init()
 {
 	register_block_type( __DIR__ . '/build' );
 }
-
 
 /**
  * Wird durchgeführt, nachdem das WP-Grundsystem hochgefahren
@@ -131,10 +132,8 @@ function loaded()
         // Hauptklasse (Main) wird instanziiert.
         $main = new Main(__FILE__);
         $main->onLoaded();
-
-        add_action('init', __NAMESPACE__ . '\block_init');
     }
+
+    add_action('init', __NAMESPACE__ . '\rrze_designsystem_init');
+
 }
-
-
-

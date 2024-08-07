@@ -1,23 +1,23 @@
 {
-    "author": "RRZE Webteam",
-    "license": "GPL-2.0-or-later",
-    "name": "rrze-typesettings",
-    "dependencies": {
-        "jquery": "^3.6.4",
-        "katex": "^0.16.7",
-        "prismjs": "^1.29.0"
-    },
-    "scripts": {
-        "build": "wp-scripts build && npm run minify-js && npm run minify-css && npm run copy-assets",
-        "start": "wp-scripts start",
-        "minify-js": "mkdir -p assets/js && for file in src/js/*.js; do uglifyjs \"$file\" -o \"assets/js/$(basename \"$file\" .js).min.js\"; done",
-        "minify-css": "mkdir -p assets/css && for file in src/css/*.css; do cssnano \"$file\" \"assets/css/$(basename \"$file\" .css).min.css\"; done",
-        "copy-assets": "cp node_modules/katex/dist/katex.min.css assets/css/ && cp node_modules/katex/dist/katex.min.js assets/js/ && cp node_modules/katex/dist/contrib/auto-render.min.js assets/js/ && cp node_modules/prismjs/themes/prism.css assets/css/ && cp node_modules/prismjs/prism.js assets/js/"
-    },
-    "devDependencies": {
-        "@wordpress/scripts": "^26.12.0",
-        "cpy-cli": "^4.0.1",
-        "uglify-js": "^3.17.4",
-        "cssnano-cli": "latest"
-    }
+  "name": "rrze-typesettings",
+  "version": "0.0.4",
+  "description": "Plugin zur Darstellung von Code und Formeln",
+  "author": "RRZE Webteam",
+  "license": "GPL-2.0-or-later",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build --webpack-copy-php",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start --webpack-copy-php"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^28.4.0"
+  },
+  "dependencies": {
+    "highlight.js": "^11.9.0"
+  }
 }

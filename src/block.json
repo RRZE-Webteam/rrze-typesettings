@@ -1,21 +1,30 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/block.json",
-  "apiVersion": 3,
-  "name": "create-block/rrze-typesettings",
-  "title": "Typesettings RRZE",
-  "category": "common",
-  "icon": "editor-code",
-  "description": "format content using LaTeX (resp KaTeX) and Code Highlightening",
-  "supports": {
-    "html": false
-  },
-  "attributes": {
-    "content": {
-      "type": "string",
-      "source": "html",
-      "selector": "p"
-    }
-  },
-  "editorScript": "file:./index.js",
-  "textdomain": "rrze-typesettings"
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "create-block/rrze-typesettings",
+    "title": "Typesettings RRZE",
+    "version": "0.0.1",
+    "description": "A block to show a design system",
+    "category": "widgets",
+    "icon": "admin-appearance",
+    "keywords": [
+        "design",
+        "designsystem"
+    ],
+    "textdomain": "rrze-typesettings",
+    "attributes": {
+        "content": {
+            "type": "string",
+            "source": "html",
+            "selector": "pre code"
+        },
+        "alignment": {
+            "type": "string",
+            "default": "none"
+        }
+    },
+    "editorScript": "file:./index.js",
+    "script": "file:./frontend.js",
+    "style": "file:./style-index.css",
+    "editorStyle": "file:./editor-style.css"
 }
