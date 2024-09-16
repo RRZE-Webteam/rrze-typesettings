@@ -1,13 +1,15 @@
-import hljs from 'highlight.js/lib/core';
-import 'highlight.js/styles/default.css';
+import Prism from 'prismjs';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/themes/prism.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
-import javascript from 'highlight.js/lib/languages/javascript';
-import php from 'highlight.js/lib/languages/php';
-hljs.registerLanguage('javascript', javascript);
-hljs.registerLanguage('php', php);
+import 'prismjs/components/prism-javascript'; 
+import 'prismjs/components/prism-php'; 
 
+// Prism.js initialisieren (für die Zeilennummern)
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('pre code').forEach((block) => {
-        hljs.highlightBlock(block);
+        block.classList.add('line-numbers');  // activate line numbers
+        Prism.highlightElement(block);
     });
 });

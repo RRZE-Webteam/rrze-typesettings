@@ -1,6 +1,6 @@
 {
   "name": "rrze-typesettings",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Plugin zur Darstellung von Code und Formeln",
   "author": "RRZE Webteam",
   "license": "GPL-2.0-or-later",
@@ -15,9 +15,9 @@
     "start": "wp-scripts start --webpack-copy-php"
   },
   "devDependencies": {
-    "@wordpress/scripts": "^28.4.0"
+    "@wordpress/scripts": "^29.0.0"
   },
   "dependencies": {
-    "highlight.js": "^11.9.0"
+    "prismjs": "^1.29.0"
   }
 }

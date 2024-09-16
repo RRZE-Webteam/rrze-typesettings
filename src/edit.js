@@ -1,8 +1,18 @@
 import { useBlockProps, RichText, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
-import { createElement as el } from '@wordpress/element';
+import { createElement as el, useRef } from '@wordpress/element';
+import Prism from 'prismjs';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/themes/prism.css';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import 'prismjs/components/prism-javascript'; 
+import 'prismjs/components/prism-php'; 
+
 
 const Edit = (props) => {
     const { attributes: { content, alignment }, setAttributes, className } = props;
+    
+    // Referenz für das Code-Element
+    const codeRef = useRef(null);
 
     const onChangeContent = (newContent) => {
         setAttributes({ content: newContent });
@@ -12,6 +22,13 @@ const Edit = (props) => {
         setAttributes({ alignment: newAlignment === undefined ? 'none' : newAlignment });
     };
 
+    const onBlurHandler = () => {
+        if (codeRef.current) {
+            block.classList.add('line-numbers');  // activate line numbers
+            Prism.highlightElement(codeRef.current);
+        }
+    };
+    
     return (
         el(
             'div',
@@ -33,6 +50,8 @@ const Edit = (props) => {
                     onChange: onChangeContent,
                     value: content,
                     placeholder: 'Enter your code here...',
+                    ref: codeRef,
+                    onBlur: onBlurHandler
                 })
             )
         )
