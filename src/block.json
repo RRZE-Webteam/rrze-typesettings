@@ -3,8 +3,8 @@
     "apiVersion": 3,
     "name": "create-block/rrze-typesettings",
     "title": "Typesettings RRZE",
-    "version": "0.0.1",
-    "description": "A block to show a design system",
+    "version": "0.0.6",
+    "description": "A block to show code highlightening",
     "category": "widgets",
     "icon": "admin-appearance",
     "keywords": [

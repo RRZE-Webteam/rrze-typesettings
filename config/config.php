@@ -63,6 +63,42 @@ function getSections()
 }
 
 
+function getShortcodeSettings(){
+	$ret = [
+		'highlight-code' => [
+			'linenumber' => [
+				'field_type' => 'toggle',
+				'label' => __( 'Show line numbers', 'rrze-typesettings' ),
+				'type' => 'boolean',
+				'default' => true,
+				'checked' => true,
+			],
+			'theme' => [
+				'values' => [
+					[
+						'id' => 'default',
+						'val' => __( 'Default', 'rrze-typesettings' )
+					],
+					[
+						'id' => 'light',
+						'val' => __( 'Light', 'rrze-typesettings' )
+					],
+					[
+						'id' => 'dark',
+						'val' => __( 'Dark', 'rrze-typesettings' )
+					],
+				],
+				'default' => 'default',
+				'field_type' => 'select',
+				'label' => __( 'Theme', 'rrze-typesettings' ),
+				'type' => 'string'
+			]
+		]
+	];
+	
+	return $ret;
+}
+
 
 
 

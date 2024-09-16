@@ -4,6 +4,7 @@ namespace RRZE\Typesettings;
 
 defined('ABSPATH') || exit;
 
+use RRZE\Typesettings\Shortcode;
 
 /**
  * Hauptklasse (Main)
@@ -41,6 +42,8 @@ class Main
         add_action('admin_enqueue_scripts', [$this, 'enqueueScripts']);
 
         $this->settings = new Settings();
+        $shortcode = new Shortcode();
+
     }
 
 
