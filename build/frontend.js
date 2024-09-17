@@ -209,6 +209,140 @@ Prism.languages.js = Prism.languages.javascript;
 
 /***/ }),
 
+/***/ "./node_modules/prismjs/components/prism-markup-templating.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/prismjs/components/prism-markup-templating.js ***!
+  \********************************************************************/
+/***/ (() => {
+
+(function (Prism) {
+
+	/**
+	 * Returns the placeholder for the given language id and index.
+	 *
+	 * @param {string} language
+	 * @param {string|number} index
+	 * @returns {string}
+	 */
+	function getPlaceholder(language, index) {
+		return '___' + language.toUpperCase() + index + '___';
+	}
+
+	Object.defineProperties(Prism.languages['markup-templating'] = {}, {
+		buildPlaceholders: {
+			/**
+			 * Tokenize all inline templating expressions matching `placeholderPattern`.
+			 *
+			 * If `replaceFilter` is provided, only matches of `placeholderPattern` for which `replaceFilter` returns
+			 * `true` will be replaced.
+			 *
+			 * @param {object} env The environment of the `before-tokenize` hook.
+			 * @param {string} language The language id.
+			 * @param {RegExp} placeholderPattern The matches of this pattern will be replaced by placeholders.
+			 * @param {(match: string) => boolean} [replaceFilter]
+			 */
+			value: function (env, language, placeholderPattern, replaceFilter) {
+				if (env.language !== language) {
+					return;
+				}
+
+				var tokenStack = env.tokenStack = [];
+
+				env.code = env.code.replace(placeholderPattern, function (match) {
+					if (typeof replaceFilter === 'function' && !replaceFilter(match)) {
+						return match;
+					}
+					var i = tokenStack.length;
+					var placeholder;
+
+					// Check for existing strings
+					while (env.code.indexOf(placeholder = getPlaceholder(language, i)) !== -1) {
+						++i;
+					}
+
+					// Create a sparse array
+					tokenStack[i] = match;
+
+					return placeholder;
+				});
+
+				// Switch the grammar to markup
+				env.grammar = Prism.languages.markup;
+			}
+		},
+		tokenizePlaceholders: {
+			/**
+			 * Replace placeholders with proper tokens after tokenizing.
+			 *
+			 * @param {object} env The environment of the `after-tokenize` hook.
+			 * @param {string} language The language id.
+			 */
+			value: function (env, language) {
+				if (env.language !== language || !env.tokenStack) {
+					return;
+				}
+
+				// Switch the grammar back
+				env.grammar = Prism.languages[language];
+
+				var j = 0;
+				var keys = Object.keys(env.tokenStack);
+
+				function walkTokens(tokens) {
+					for (var i = 0; i < tokens.length; i++) {
+						// all placeholders are replaced already
+						if (j >= keys.length) {
+							break;
+						}
+
+						var token = tokens[i];
+						if (typeof token === 'string' || (token.content && typeof token.content === 'string')) {
+							var k = keys[j];
+							var t = env.tokenStack[k];
+							var s = typeof token === 'string' ? token : token.content;
+							var placeholder = getPlaceholder(language, k);
+
+							var index = s.indexOf(placeholder);
+							if (index > -1) {
+								++j;
+
+								var before = s.substring(0, index);
+								var middle = new Prism.Token(language, Prism.tokenize(t, env.grammar), 'language-' + language, t);
+								var after = s.substring(index + placeholder.length);
+
+								var replacement = [];
+								if (before) {
+									replacement.push.apply(replacement, walkTokens([before]));
+								}
+								replacement.push(middle);
+								if (after) {
+									replacement.push.apply(replacement, walkTokens([after]));
+								}
+
+								if (typeof token === 'string') {
+									tokens.splice.apply(tokens, [i, 1].concat(replacement));
+								} else {
+									token.content = replacement;
+								}
+							}
+						} else if (token.content /* && typeof token.content !== 'string' */) {
+							walkTokens(token.content);
+						}
+					}
+
+					return tokens;
+				}
+
+				walkTokens(env.tokens);
+			}
+		}
+	});
+
+}(Prism));
+
+
+/***/ }),
+
 /***/ "./node_modules/prismjs/components/prism-php.js":
 /*!******************************************************!*\
   !*** ./node_modules/prismjs/components/prism-php.js ***!
@@ -2869,14 +3003,16 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! prismjs */ "./node_modules/prismjs/prism.js");
 /* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(prismjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js");
-/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prismjs_themes_prism_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prismjs/themes/prism.css */ "./node_modules/prismjs/themes/prism.css");
-/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers.css */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css");
-/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prismjs/components/prism-javascript */ "./node_modules/prismjs/components/prism-javascript.js");
-/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prismjs/components/prism-php */ "./node_modules/prismjs/components/prism-php.js");
-/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var prismjs_components_prism_markup_templating__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! prismjs/components/prism-markup-templating */ "./node_modules/prismjs/components/prism-markup-templating.js");
+/* harmony import */ var prismjs_components_prism_markup_templating__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_markup_templating__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prismjs/components/prism-php */ "./node_modules/prismjs/components/prism-php.js");
+/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js");
+/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prismjs_themes_prism_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prismjs/themes/prism.css */ "./node_modules/prismjs/themes/prism.css");
+/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers.css */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css");
+/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prismjs/components/prism-javascript */ "./node_modules/prismjs/components/prism-javascript.js");
+/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_6__);
 
 
 
@@ -2884,11 +3020,25 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Prism.js initialisieren (für die Zeilennummern)
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code').forEach(block => {
-    block.classList.add('line-numbers'); // activate line numbers
-    prismjs__WEBPACK_IMPORTED_MODULE_0___default().highlightElement(block);
+    const lineNumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
+
+    // block.getAttributeNames().forEach(attrName => {
+    //     const attrValue = block.getAttribute(attrName);
+    //     console.log(`Attribut: ${attrName}, Wert: ${attrValue}`);
+    // });
+
+    // if (lineNumbersEnabled) {
+    block.classList.add('line-numbers');
+    // }
+
+    if (!block.className.includes('language-')) {
+      block.classList.add('language-javascript');
+    }
+    if ((prismjs__WEBPACK_IMPORTED_MODULE_0___default()) && typeof (prismjs__WEBPACK_IMPORTED_MODULE_0___default().highlightElement) === 'function') {
+      prismjs__WEBPACK_IMPORTED_MODULE_0___default().highlightElement(block);
+    }
   });
 });
 })();

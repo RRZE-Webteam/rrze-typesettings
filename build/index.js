@@ -14,20 +14,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prismjs */ "./node_modules/prismjs/prism.js");
-/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prismjs__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js");
-/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var prismjs_themes_prism_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prismjs/themes/prism.css */ "./node_modules/prismjs/themes/prism.css");
-/* harmony import */ var prismjs_themes_prism_okaidia_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prismjs/themes/prism-okaidia.css */ "./node_modules/prismjs/themes/prism-okaidia.css");
-/* harmony import */ var prismjs_themes_prism_solarizedlight_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prismjs/themes/prism-solarizedlight.css */ "./node_modules/prismjs/themes/prism-solarizedlight.css");
-/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers.css */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css");
-/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prismjs/components/prism-javascript */ "./node_modules/prismjs/components/prism-javascript.js");
-/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prismjs/components/prism-php */ "./node_modules/prismjs/components/prism-php.js");
-/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prismjs */ "./node_modules/prismjs/prism.js");
+/* harmony import */ var prismjs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prismjs__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js");
+/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(prismjs_plugins_line_numbers_prism_line_numbers__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var prismjs_themes_prism_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prismjs/themes/prism.css */ "./node_modules/prismjs/themes/prism.css");
+/* harmony import */ var prismjs_plugins_line_numbers_prism_line_numbers_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! prismjs/plugins/line-numbers/prism-line-numbers.css */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css");
+/* harmony import */ var prismjs_components_prism_markup_templating__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prismjs/components/prism-markup-templating */ "./node_modules/prismjs/components/prism-markup-templating.js");
+/* harmony import */ var prismjs_components_prism_markup_templating__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_markup_templating__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! prismjs/components/prism-php */ "./node_modules/prismjs/components/prism-php.js");
+/* harmony import */ var prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_php__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! prismjs/components/prism-javascript */ "./node_modules/prismjs/components/prism-javascript.js");
+/* harmony import */ var prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_javascript__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var prismjs_components_prism_markup__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! prismjs/components/prism-markup */ "./node_modules/prismjs/components/prism-markup.js");
+/* harmony import */ var prismjs_components_prism_markup__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(prismjs_components_prism_markup__WEBPACK_IMPORTED_MODULE_10__);
 
 
 
@@ -37,52 +41,98 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+ // Für HTML
 
 const Edit = props => {
   const {
     attributes: {
       content,
-      alignment
+      alignment,
+      linenumber,
+      theme,
+      language
     },
     setAttributes,
     className
   } = props;
-
-  // Referenz für das Code-Element
-  const codeRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  const codeRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
+    if (codeRef.current) {
+      if (linenumber) {
+        codeRef.current.classList.add('line-numbers');
+      } else {
+        codeRef.current.classList.remove('line-numbers');
+      }
+      codeRef.current.classList.add(`language-${language}`);
+      prismjs__WEBPACK_IMPORTED_MODULE_3___default().highlightElement(codeRef.current);
+    }
+  }, [content, linenumber, theme, language]);
   const onChangeContent = newContent => {
     setAttributes({
       content: newContent
     });
   };
-  const onChangeAlignment = newAlignment => {
+  const onChangeLanguage = newLanguage => {
     setAttributes({
-      alignment: newAlignment === undefined ? 'none' : newAlignment
+      language: newLanguage
     });
   };
-  const onBlurHandler = () => {
-    if (codeRef.current) {
-      block.classList.add('line-numbers'); // activate line numbers
-      prismjs__WEBPACK_IMPORTED_MODULE_2___default().highlightElement(codeRef.current);
-    }
+  const onChangeLinenumber = newLinenumber => {
+    setAttributes({
+      linenumber: newLinenumber
+    });
   };
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)('div', (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('div', (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
     key: 'controls'
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.AlignmentToolbar, {
     value: alignment,
-    onChange: onChangeAlignment
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)('pre', {
+    onChange: newAlignment => setAttributes({
+      alignment: newAlignment === undefined ? 'none' : newAlignment
+    })
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.InspectorControls, {
+    key: 'settings'
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.PanelBody, {
+    title: 'Code Settings',
+    initialOpen: true
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: 'Language',
+    value: language,
+    options: [{
+      label: 'JavaScript',
+      value: 'javascript'
+    }, {
+      label: 'PHP',
+      value: 'php'
+    }, {
+      label: 'HTML',
+      value: 'markup'
+    }],
+    onChange: onChangeLanguage
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
+    label: 'Show line numbers',
+    checked: linenumber,
+    onChange: onChangeLinenumber
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('pre', {
     style: {
       textAlign: alignment
-    }
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText, {
-    tagName: 'code',
+    },
+    className: theme !== 'default' ? `prism-${theme}` : '',
+    'data-linenumbers': linenumber ? 'true' : 'false' // Setze das Attribut abhängig von der Auswahl
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('textarea', {
     className,
-    onChange: onChangeContent,
     value: content,
     placeholder: 'Enter your code here...',
-    ref: codeRef,
-    onBlur: onBlurHandler
+    onChange: event => onChangeContent(event.target.value),
+    rows: 10,
+    style: {
+      width: '100%',
+      fontFamily: 'monospace',
+      whiteSpace: 'pre',
+      overflowWrap: 'normal',
+      overflow: 'auto'
+    },
+    ref: codeRef
   })));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Edit);
@@ -127,32 +177,6 @@ const Save = props => {
 /*!**************************************************************************!*\
   !*** ./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css ***!
   \**************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./node_modules/prismjs/themes/prism-okaidia.css":
-/*!*******************************************************!*\
-  !*** ./node_modules/prismjs/themes/prism-okaidia.css ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./node_modules/prismjs/themes/prism-solarizedlight.css":
-/*!**************************************************************!*\
-  !*** ./node_modules/prismjs/themes/prism-solarizedlight.css ***!
-  \**************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -353,6 +377,336 @@ if (Prism.languages.markup) {
 }
 
 Prism.languages.js = Prism.languages.javascript;
+
+
+/***/ }),
+
+/***/ "./node_modules/prismjs/components/prism-markup-templating.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/prismjs/components/prism-markup-templating.js ***!
+  \********************************************************************/
+/***/ (() => {
+
+(function (Prism) {
+
+	/**
+	 * Returns the placeholder for the given language id and index.
+	 *
+	 * @param {string} language
+	 * @param {string|number} index
+	 * @returns {string}
+	 */
+	function getPlaceholder(language, index) {
+		return '___' + language.toUpperCase() + index + '___';
+	}
+
+	Object.defineProperties(Prism.languages['markup-templating'] = {}, {
+		buildPlaceholders: {
+			/**
+			 * Tokenize all inline templating expressions matching `placeholderPattern`.
+			 *
+			 * If `replaceFilter` is provided, only matches of `placeholderPattern` for which `replaceFilter` returns
+			 * `true` will be replaced.
+			 *
+			 * @param {object} env The environment of the `before-tokenize` hook.
+			 * @param {string} language The language id.
+			 * @param {RegExp} placeholderPattern The matches of this pattern will be replaced by placeholders.
+			 * @param {(match: string) => boolean} [replaceFilter]
+			 */
+			value: function (env, language, placeholderPattern, replaceFilter) {
+				if (env.language !== language) {
+					return;
+				}
+
+				var tokenStack = env.tokenStack = [];
+
+				env.code = env.code.replace(placeholderPattern, function (match) {
+					if (typeof replaceFilter === 'function' && !replaceFilter(match)) {
+						return match;
+					}
+					var i = tokenStack.length;
+					var placeholder;
+
+					// Check for existing strings
+					while (env.code.indexOf(placeholder = getPlaceholder(language, i)) !== -1) {
+						++i;
+					}
+
+					// Create a sparse array
+					tokenStack[i] = match;
+
+					return placeholder;
+				});
+
+				// Switch the grammar to markup
+				env.grammar = Prism.languages.markup;
+			}
+		},
+		tokenizePlaceholders: {
+			/**
+			 * Replace placeholders with proper tokens after tokenizing.
+			 *
+			 * @param {object} env The environment of the `after-tokenize` hook.
+			 * @param {string} language The language id.
+			 */
+			value: function (env, language) {
+				if (env.language !== language || !env.tokenStack) {
+					return;
+				}
+
+				// Switch the grammar back
+				env.grammar = Prism.languages[language];
+
+				var j = 0;
+				var keys = Object.keys(env.tokenStack);
+
+				function walkTokens(tokens) {
+					for (var i = 0; i < tokens.length; i++) {
+						// all placeholders are replaced already
+						if (j >= keys.length) {
+							break;
+						}
+
+						var token = tokens[i];
+						if (typeof token === 'string' || (token.content && typeof token.content === 'string')) {
+							var k = keys[j];
+							var t = env.tokenStack[k];
+							var s = typeof token === 'string' ? token : token.content;
+							var placeholder = getPlaceholder(language, k);
+
+							var index = s.indexOf(placeholder);
+							if (index > -1) {
+								++j;
+
+								var before = s.substring(0, index);
+								var middle = new Prism.Token(language, Prism.tokenize(t, env.grammar), 'language-' + language, t);
+								var after = s.substring(index + placeholder.length);
+
+								var replacement = [];
+								if (before) {
+									replacement.push.apply(replacement, walkTokens([before]));
+								}
+								replacement.push(middle);
+								if (after) {
+									replacement.push.apply(replacement, walkTokens([after]));
+								}
+
+								if (typeof token === 'string') {
+									tokens.splice.apply(tokens, [i, 1].concat(replacement));
+								} else {
+									token.content = replacement;
+								}
+							}
+						} else if (token.content /* && typeof token.content !== 'string' */) {
+							walkTokens(token.content);
+						}
+					}
+
+					return tokens;
+				}
+
+				walkTokens(env.tokens);
+			}
+		}
+	});
+
+}(Prism));
+
+
+/***/ }),
+
+/***/ "./node_modules/prismjs/components/prism-markup.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/prismjs/components/prism-markup.js ***!
+  \*********************************************************/
+/***/ (() => {
+
+Prism.languages.markup = {
+	'comment': {
+		pattern: /<!--(?:(?!<!--)[\s\S])*?-->/,
+		greedy: true
+	},
+	'prolog': {
+		pattern: /<\?[\s\S]+?\?>/,
+		greedy: true
+	},
+	'doctype': {
+		// https://www.w3.org/TR/xml/#NT-doctypedecl
+		pattern: /<!DOCTYPE(?:[^>"'[\]]|"[^"]*"|'[^']*')+(?:\[(?:[^<"'\]]|"[^"]*"|'[^']*'|<(?!!--)|<!--(?:[^-]|-(?!->))*-->)*\]\s*)?>/i,
+		greedy: true,
+		inside: {
+			'internal-subset': {
+				pattern: /(^[^\[]*\[)[\s\S]+(?=\]>$)/,
+				lookbehind: true,
+				greedy: true,
+				inside: null // see below
+			},
+			'string': {
+				pattern: /"[^"]*"|'[^']*'/,
+				greedy: true
+			},
+			'punctuation': /^<!|>$|[[\]]/,
+			'doctype-tag': /^DOCTYPE/i,
+			'name': /[^\s<>'"]+/
+		}
+	},
+	'cdata': {
+		pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+		greedy: true
+	},
+	'tag': {
+		pattern: /<\/?(?!\d)[^\s>\/=$<%]+(?:\s(?:\s*[^\s>\/=]+(?:\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))|(?=[\s/>])))+)?\s*\/?>/,
+		greedy: true,
+		inside: {
+			'tag': {
+				pattern: /^<\/?[^\s>\/]+/,
+				inside: {
+					'punctuation': /^<\/?/,
+					'namespace': /^[^\s>\/:]+:/
+				}
+			},
+			'special-attr': [],
+			'attr-value': {
+				pattern: /=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+)/,
+				inside: {
+					'punctuation': [
+						{
+							pattern: /^=/,
+							alias: 'attr-equals'
+						},
+						{
+							pattern: /^(\s*)["']|["']$/,
+							lookbehind: true
+						}
+					]
+				}
+			},
+			'punctuation': /\/?>/,
+			'attr-name': {
+				pattern: /[^\s>\/]+/,
+				inside: {
+					'namespace': /^[^\s>\/:]+:/
+				}
+			}
+
+		}
+	},
+	'entity': [
+		{
+			pattern: /&[\da-z]{1,8};/i,
+			alias: 'named-entity'
+		},
+		/&#x?[\da-f]{1,8};/i
+	]
+};
+
+Prism.languages.markup['tag'].inside['attr-value'].inside['entity'] =
+	Prism.languages.markup['entity'];
+Prism.languages.markup['doctype'].inside['internal-subset'].inside = Prism.languages.markup;
+
+// Plugin to make entity title show the real entity, idea by Roman Komarov
+Prism.hooks.add('wrap', function (env) {
+
+	if (env.type === 'entity') {
+		env.attributes['title'] = env.content.replace(/&amp;/, '&');
+	}
+});
+
+Object.defineProperty(Prism.languages.markup.tag, 'addInlined', {
+	/**
+	 * Adds an inlined language to markup.
+	 *
+	 * An example of an inlined language is CSS with `<style>` tags.
+	 *
+	 * @param {string} tagName The name of the tag that contains the inlined language. This name will be treated as
+	 * case insensitive.
+	 * @param {string} lang The language key.
+	 * @example
+	 * addInlined('style', 'css');
+	 */
+	value: function addInlined(tagName, lang) {
+		var includedCdataInside = {};
+		includedCdataInside['language-' + lang] = {
+			pattern: /(^<!\[CDATA\[)[\s\S]+?(?=\]\]>$)/i,
+			lookbehind: true,
+			inside: Prism.languages[lang]
+		};
+		includedCdataInside['cdata'] = /^<!\[CDATA\[|\]\]>$/i;
+
+		var inside = {
+			'included-cdata': {
+				pattern: /<!\[CDATA\[[\s\S]*?\]\]>/i,
+				inside: includedCdataInside
+			}
+		};
+		inside['language-' + lang] = {
+			pattern: /[\s\S]+/,
+			inside: Prism.languages[lang]
+		};
+
+		var def = {};
+		def[tagName] = {
+			pattern: RegExp(/(<__[^>]*>)(?:<!\[CDATA\[(?:[^\]]|\](?!\]>))*\]\]>|(?!<!\[CDATA\[)[\s\S])*?(?=<\/__>)/.source.replace(/__/g, function () { return tagName; }), 'i'),
+			lookbehind: true,
+			greedy: true,
+			inside: inside
+		};
+
+		Prism.languages.insertBefore('markup', 'cdata', def);
+	}
+});
+Object.defineProperty(Prism.languages.markup.tag, 'addAttribute', {
+	/**
+	 * Adds an pattern to highlight languages embedded in HTML attributes.
+	 *
+	 * An example of an inlined language is CSS with `style` attributes.
+	 *
+	 * @param {string} attrName The name of the tag that contains the inlined language. This name will be treated as
+	 * case insensitive.
+	 * @param {string} lang The language key.
+	 * @example
+	 * addAttribute('style', 'css');
+	 */
+	value: function (attrName, lang) {
+		Prism.languages.markup.tag.inside['special-attr'].push({
+			pattern: RegExp(
+				/(^|["'\s])/.source + '(?:' + attrName + ')' + /\s*=\s*(?:"[^"]*"|'[^']*'|[^\s'">=]+(?=[\s>]))/.source,
+				'i'
+			),
+			lookbehind: true,
+			inside: {
+				'attr-name': /^[^\s=]+/,
+				'attr-value': {
+					pattern: /=[\s\S]+/,
+					inside: {
+						'value': {
+							pattern: /(^=\s*(["']|(?!["'])))\S[\s\S]*(?=\2$)/,
+							lookbehind: true,
+							alias: [lang, 'language-' + lang],
+							inside: Prism.languages[lang]
+						},
+						'punctuation': [
+							{
+								pattern: /^=/,
+								alias: 'attr-equals'
+							},
+							/"|'/
+						]
+					}
+				}
+			}
+		});
+	}
+});
+
+Prism.languages.html = Prism.languages.markup;
+Prism.languages.mathml = Prism.languages.markup;
+Prism.languages.svg = Prism.languages.markup;
+
+Prism.languages.xml = Prism.languages.extend('markup', {});
+Prism.languages.ssml = Prism.languages.xml;
+Prism.languages.atom = Prism.languages.xml;
+Prism.languages.rss = Prism.languages.xml;
 
 
 /***/ }),
@@ -2949,6 +3303,17 @@ module.exports = window["wp"]["blocks"];
 
 /***/ }),
 
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["wp"]["components"];
+
+/***/ }),
+
 /***/ "@wordpress/element":
 /*!*********************************!*\
   !*** external ["wp","element"] ***!
@@ -2967,7 +3332,7 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.0.6","description":"A block to show code highlightening","category":"widgets","icon":"admin-appearance","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"pre code"},"alignment":{"type":"string","default":"none"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.0.6","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
 
 /***/ })
 

@@ -1,36 +1,46 @@
-import { useBlockProps, RichText, BlockControls, AlignmentToolbar } from '@wordpress/block-editor';
-import { createElement as el, useRef } from '@wordpress/element';
+import { useBlockProps, BlockControls, InspectorControls, AlignmentToolbar } from '@wordpress/block-editor';
+import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
+import { createElement as el, useRef, useEffect } from '@wordpress/element';
 import Prism from 'prismjs';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/themes/prism.css';
-import 'prismjs/themes/prism-okaidia.css';
-import 'prismjs/themes/prism-solarizedlight.css';
 import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
-import 'prismjs/components/prism-javascript'; 
-import 'prismjs/components/prism-php'; 
 
+import 'prismjs/components/prism-markup-templating';  
+import 'prismjs/components/prism-php'; 
+import 'prismjs/components/prism-javascript'; 
+import 'prismjs/components/prism-markup';  // Für HTML
 
 const Edit = (props) => {
-    const { attributes: { content, alignment }, setAttributes, className } = props;
+    const { attributes: { content, alignment, linenumber, theme, language }, setAttributes, className } = props;
     
-    // Referenz für das Code-Element
     const codeRef = useRef(null);
+
+    useEffect(() => {
+        if (codeRef.current) {
+            if (linenumber) {
+                codeRef.current.classList.add('line-numbers');
+            } else {
+                codeRef.current.classList.remove('line-numbers');
+            }
+
+            codeRef.current.classList.add(`language-${language}`);
+            Prism.highlightElement(codeRef.current);
+        }
+    }, [content, linenumber, theme, language]);
 
     const onChangeContent = (newContent) => {
         setAttributes({ content: newContent });
     };
 
-    const onChangeAlignment = (newAlignment) => {
-        setAttributes({ alignment: newAlignment === undefined ? 'none' : newAlignment });
+    const onChangeLanguage = (newLanguage) => {
+        setAttributes({ language: newLanguage });
     };
 
-    const onBlurHandler = () => {
-        if (codeRef.current) {
-            block.classList.add('line-numbers');  // activate line numbers
-            Prism.highlightElement(codeRef.current);
-        }
+    const onChangeLinenumber = (newLinenumber) => {
+        setAttributes({ linenumber: newLinenumber });
     };
-    
+
     return (
         el(
             'div',
@@ -40,20 +50,47 @@ const Edit = (props) => {
                 { key: 'controls' },
                 el(AlignmentToolbar, {
                     value: alignment,
-                    onChange: onChangeAlignment,
+                    onChange: (newAlignment) => setAttributes({ alignment: newAlignment === undefined ? 'none' : newAlignment }),
                 })
             ),
             el(
+                InspectorControls,
+                { key: 'settings' },
+                el(
+                    PanelBody,
+                    { title: 'Code Settings', initialOpen: true },
+                    el(SelectControl, {
+                        label: 'Language',
+                        value: language,
+                        options: [
+                            { label: 'JavaScript', value: 'javascript' },
+                            { label: 'PHP', value: 'php' },
+                            { label: 'HTML', value: 'markup' },
+                        ],
+                        onChange: onChangeLanguage,
+                    }),
+                    el(ToggleControl, {
+                        label: 'Show line numbers',
+                        checked: linenumber,
+                        onChange: onChangeLinenumber,
+                    })
+                )
+            ),
+            el(
                 'pre',
-                { style: { textAlign: alignment } },
-                el(RichText, {
-                    tagName: 'code',
+                {
+                    style: { textAlign: alignment },
+                    className: theme !== 'default' ? `prism-${theme}` : '',
+                    'data-linenumbers': linenumber ? 'true' : 'false',  // Setze das Attribut abhängig von der Auswahl
+                },
+                el('textarea', {
                     className,
-                    onChange: onChangeContent,
                     value: content,
                     placeholder: 'Enter your code here...',
-                    ref: codeRef,
-                    onBlur: onBlurHandler
+                    onChange: (event) => onChangeContent(event.target.value),
+                    rows: 10,
+                    style: { width: '100%', fontFamily: 'monospace', whiteSpace: 'pre', overflowWrap: 'normal', overflow: 'auto' },
+                    ref: codeRef
                 })
             )
         )

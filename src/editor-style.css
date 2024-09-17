@@ -1,1 +1,19 @@
-@import 'highlight.js/styles/default.css';
+/* Umrandung für das Eingabefeld im Editor */
+.wp-block-create-block-rrze-typesettings pre {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    min-height: 100px;
+}
+
+/* Umrandung, wenn der Block im Editor ausgewählt ist */
+.wp-block-create-block-rrze-typesettings.is-selected pre {
+    border: 2px solid #007cba;
+    background-color: #fff;
+}
+
+/* Optional: Stil für das Icon im Editor (optional, falls benötigt) */
+.wp-block-create-block-rrze-typesettings .block-editor-block-icon {
+    color: #007cba;
+}
