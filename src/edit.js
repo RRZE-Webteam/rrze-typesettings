@@ -88,6 +88,7 @@ const Edit = (props) => {
                     value: content,
                     placeholder: 'Enter your code here...',
                     onChange: (event) => onChangeContent(event.target.value),
+                    'data-linenumbers': linenumber ? 'true' : 'false', 
                     rows: 10,
                     style: { width: '100%', fontFamily: 'monospace', whiteSpace: 'pre', overflowWrap: 'normal', overflow: 'auto' },
                     ref: codeRef

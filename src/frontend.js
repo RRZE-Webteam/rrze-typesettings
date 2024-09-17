@@ -8,7 +8,7 @@ import 'prismjs/components/prism-javascript';
 
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('pre code').forEach((block) => {
-        const lineNumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
+        const lineNumbersEnabled = block.getAttribute('linenumbers') === 'true';
 
         block.getAttributeNames().forEach(attrName => {
             const attrValue = block.getAttribute(attrName);
