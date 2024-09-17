@@ -81,7 +81,7 @@ const Edit = (props) => {
                 {
                     style: { textAlign: alignment },
                     className: theme !== 'default' ? `prism-${theme}` : '',
-                    'data-linenumbers': linenumber ? 'true' : 'false',  // Setze das Attribut abhängig von der Auswahl
+                    'data-linenumbers': linenumber ? 'true' : 'false', 
                 },
                 el('textarea', {
                     className,
@@ -91,7 +91,7 @@ const Edit = (props) => {
                     rows: 10,
                     style: { width: '100%', fontFamily: 'monospace', whiteSpace: 'pre', overflowWrap: 'normal', overflow: 'auto' },
                     ref: codeRef
-                })
+                }),
             )
         )
     );

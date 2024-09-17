@@ -3023,16 +3023,13 @@ __webpack_require__.r(__webpack_exports__);
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre code').forEach(block => {
     const lineNumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
-
-    // block.getAttributeNames().forEach(attrName => {
-    //     const attrValue = block.getAttribute(attrName);
-    //     console.log(`Attribut: ${attrName}, Wert: ${attrValue}`);
-    // });
-
-    // if (lineNumbersEnabled) {
-    block.classList.add('line-numbers');
-    // }
-
+    block.getAttributeNames().forEach(attrName => {
+      const attrValue = block.getAttribute(attrName);
+      console.log(`Attribut: ${attrName}, Wert: ${attrValue}`);
+    });
+    if (lineNumbersEnabled) {
+      block.classList.add('line-numbers');
+    }
     if (!block.className.includes('language-')) {
       block.classList.add('language-javascript');
     }

@@ -118,7 +118,7 @@ const Edit = props => {
       textAlign: alignment
     },
     className: theme !== 'default' ? `prism-${theme}` : '',
-    'data-linenumbers': linenumber ? 'true' : 'false' // Setze das Attribut abhängig von der Auswahl
+    'data-linenumbers': linenumber ? 'true' : 'false'
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('textarea', {
     className,
     value: content,
