@@ -42,7 +42,7 @@ class Main
         add_action('admin_enqueue_scripts', [$this, 'enqueueScripts']);
 
         $this->settings = new Settings();
-        $shortcode = new Shortcode();
+        $shortcode = new Shortcode($this->pluginFile);
 
     }
 

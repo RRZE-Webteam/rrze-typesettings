@@ -8,22 +8,19 @@ class Shortcode {
     private $theme_css;
     private $settings;
 
-    public function __construct() {
+    protected $pluginFile;
+
+    public function __construct($pluginFile) {
         add_shortcode('highlight-code', [$this, 'render_shortcode_highlight_code']);
         $this->settings = getShortcodeSettings();
+        $this->pluginFile = $pluginFile;
     }
 
-    public function enqueue_prism_assets($atts) {
-        $this->theme_css = $this->get_theme_css_from_settings($atts['theme'], $this->settings['highlight-code']['theme']['values']);
+    public function enqueue_prism_assets($theme) {
+        $this->theme_css = $this->get_theme_css_from_settings($theme, $this->settings['highlight-code']['theme']['values']);
 
-        wp_enqueue_style('prismjs-css', plugin_dir_url(__FILE__) . 'assets/css/' . $this->theme_css);
-
-        if ($atts['linenumber']) {
-            wp_enqueue_style('prismjs-line-numbers-css', plugin_dir_url(__FILE__) . 'assets/css/prism-line-numbers.css');
-            wp_enqueue_script('prismjs-line-numbers', plugin_dir_url(__FILE__) . 'assets/js/prism-line-numbers.js', ['prismjs'], null, true);
-        }
-
-        wp_enqueue_script('prismjs', plugin_dir_url(__FILE__) . 'assets/js/prism.js', [], null, true);
+        wp_enqueue_style('prismjs-css', plugins_url('assets/css/', plugin_basename($this->pluginFile)) . $this->theme_css);
+        wp_enqueue_script('prismjs', plugins_url('assets/js/prism.js', plugin_basename($this->pluginFile)), [], null, true);
     }
 
     public function render_shortcode_highlight_code($atts, $content = null) {
@@ -37,8 +34,7 @@ class Shortcode {
             'highlight-code'
         );
 
-
-        $this->enqueue_prism_assets($atts);
+        $this->enqueue_prism_assets($atts['theme']);
 
         $linenumber_class = (!empty($atts['linenumber']) ? 'line-numbers' : '');
 
@@ -58,14 +54,14 @@ class Shortcode {
 
     private function get_theme_css_from_settings($theme = null, $theme_options) {
         if (is_null($theme)){
-            return  'prism.css'; 
+            return  'default.css'; 
         }
-        foreach ($theme_options as $option) {
+
+        foreach ($theme_options as $nr => $option) {
             if ($option['id'] === $theme) {
-                return $option['id'] === 'light' ? 'prism-solarizedlight.css' :
-                       ($option['id'] === 'dark' ? 'prism-okaidia.css' : 'prism.css');
+                return $option['id'] . '.css';
             }
         }
-        return 'prism.css'; 
+        return 'default.css'; 
     }
 }

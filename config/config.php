@@ -87,6 +87,10 @@ function getShortcodeSettings(){
 						'id' => 'dark',
 						'val' => __( 'Dark', 'rrze-typesettings' )
 					],
+					[
+						'id' => 'okaidia',
+						'val' => __( 'Okaidia', 'rrze-typesettings' )
+					],
 				],
 				'default' => 'default',
 				'field_type' => 'select',
