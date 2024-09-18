@@ -3021,21 +3021,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('pre code').forEach(block => {
-    const lineNumbersEnabled = block.getAttribute('linenumbers') === 'true';
-    block.getAttributeNames().forEach(attrName => {
-      const attrValue = block.getAttribute(attrName);
-      console.log(`Attribut: ${attrName}, Wert: ${attrValue}`);
-    });
+  document.querySelectorAll('pre[data-language]').forEach(block => {
+    const language = block.getAttribute('data-language');
+    const lineNumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
+    console.log(`Language: ${language}, Line numbers: ${lineNumbersEnabled}`);
+    block.classList.add(`language-${language}`);
     if (lineNumbersEnabled) {
       block.classList.add('line-numbers');
     }
-    if (!block.className.includes('language-')) {
-      block.classList.add('language-javascript');
-    }
-    if ((prismjs__WEBPACK_IMPORTED_MODULE_0___default()) && typeof (prismjs__WEBPACK_IMPORTED_MODULE_0___default().highlightElement) === 'function') {
-      prismjs__WEBPACK_IMPORTED_MODULE_0___default().highlightElement(block);
-    }
+    prismjs__WEBPACK_IMPORTED_MODULE_0___default().highlightAllUnder(block);
   });
 });
 })();

@@ -153,24 +153,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const Save = props => {
+const save = props => {
   const {
     attributes: {
       content,
-      alignment
+      alignment,
+      linenumber,
+      language
     }
   } = props;
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)('pre', {
-    style: {
-      textAlign: alignment
-    }
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)('code', null, content));
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pre", {
+    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
+      style: {
+        textAlign: alignment
+      },
+      'data-language': language,
+      'data-linenumbers': linenumber ? 'true' : 'false'
+    }),
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("code", {
+      children: content
+    })
+  });
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (save);
 
 /***/ }),
 
@@ -3282,6 +3291,17 @@ Prism.languages.js = Prism.languages.javascript;
 
 /***/ }),
 
+/***/ "react/jsx-runtime":
+/*!**********************************!*\
+  !*** external "ReactJSXRuntime" ***!
+  \**********************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactJSXRuntime"];
+
+/***/ }),
+
 /***/ "@wordpress/block-editor":
 /*!*************************************!*\
   !*** external ["wp","blockEditor"] ***!
@@ -3333,7 +3353,7 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.0.6","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.0.9","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
 
 /***/ })
 

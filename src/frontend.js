@@ -7,25 +7,18 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/components/prism-javascript';
 
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('pre code').forEach((block) => {
-        const lineNumbersEnabled = block.getAttribute('linenumbers') === 'true';
+    document.querySelectorAll('pre[data-language]').forEach((block) => {
+        const language = block.getAttribute('data-language');
+        const lineNumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
 
-        block.getAttributeNames().forEach(attrName => {
-            const attrValue = block.getAttribute(attrName);
-            console.log(`Attribut: ${attrName}, Wert: ${attrValue}`);
-        });
+        console.log(`Language: ${language}, Line numbers: ${lineNumbersEnabled}`);
 
+        block.classList.add(`language-${language}`);
 
         if (lineNumbersEnabled) {
             block.classList.add('line-numbers');
         }
 
-        if (!block.className.includes('language-')) {
-            block.classList.add('language-javascript');
-        }
-
-        if (Prism && typeof Prism.highlightElement === 'function') {
-            Prism.highlightElement(block);
-        }
+        Prism.highlightAllUnder(block);
     });
 });
