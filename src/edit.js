@@ -37,6 +37,10 @@ const Edit = (props) => {
         setAttributes({ language: newLanguage });
     };
 
+    const onChangeTheme = (newTheme) => {
+        setAttributes({ theme: newTheme });
+    };
+
     const onChangeLinenumber = (newLinenumber) => {
         setAttributes({ linenumber: newLinenumber });
     };
@@ -63,11 +67,25 @@ const Edit = (props) => {
                         label: 'Language',
                         value: language,
                         options: [
-                            { label: 'JavaScript', value: 'javascript' },
-                            { label: 'PHP', value: 'php' },
                             { label: 'HTML', value: 'markup' },
+                            { label: 'JavaScript', value: 'javascript' },
+                            { label: 'JSON', value: 'jason' },
+                            { label: 'PHP', value: 'php' },
+                            { label: 'Perl', value: 'perl' },
+                            { label: 'SASS', value: 'sass' },
                         ],
                         onChange: onChangeLanguage,
+                    }),
+                    el(SelectControl, {
+                        label: 'Theme',
+                        value: theme,
+                        options: [
+                            { label: 'Default', value: 'default' },
+                            { label: 'Light', value: 'light' },
+                            { label: 'Dark', value: 'dark' },
+                            { label: 'Okaidia', value: 'okaidia' },
+                        ],
+                        onChange: onChangeTheme,
                     }),
                     el(ToggleControl, {
                         label: 'Show line numbers',

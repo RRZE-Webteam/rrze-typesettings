@@ -3,7 +3,7 @@
   "apiVersion": 3,
   "name": "create-block/rrze-typesettings",
   "title": "Typesettings RRZE",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "A block to show code highlighting",
   "category": "text",
   "icon": "editor-code",

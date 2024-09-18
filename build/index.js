@@ -78,6 +78,11 @@ const Edit = props => {
       language: newLanguage
     });
   };
+  const onChangeTheme = newTheme => {
+    setAttributes({
+      theme: newTheme
+    });
+  };
   const onChangeLinenumber = newLinenumber => {
     setAttributes({
       linenumber: newLinenumber
@@ -99,16 +104,42 @@ const Edit = props => {
     label: 'Language',
     value: language,
     options: [{
+      label: 'HTML',
+      value: 'markup'
+    }, {
       label: 'JavaScript',
       value: 'javascript'
+    }, {
+      label: 'JSON',
+      value: 'jason'
     }, {
       label: 'PHP',
       value: 'php'
     }, {
-      label: 'HTML',
-      value: 'markup'
+      label: 'Perl',
+      value: 'perl'
+    }, {
+      label: 'SASS',
+      value: 'sass'
     }],
     onChange: onChangeLanguage
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
+    label: 'Theme',
+    value: theme,
+    options: [{
+      label: 'Default',
+      value: 'default'
+    }, {
+      label: 'Light',
+      value: 'light'
+    }, {
+      label: 'Dark',
+      value: 'dark'
+    }, {
+      label: 'Okaidia',
+      value: 'okaidia'
+    }],
+    onChange: onChangeTheme
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: 'Show line numbers',
     checked: linenumber,
@@ -163,7 +194,8 @@ const save = props => {
       content,
       alignment,
       linenumber,
-      language
+      language,
+      theme
     }
   } = props;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pre", {
@@ -172,7 +204,8 @@ const save = props => {
         textAlign: alignment
       },
       'data-language': language,
-      'data-linenumbers': linenumber ? 'true' : 'false'
+      'data-linenumbers': linenumber ? 'true' : 'false',
+      'data-theme': theme
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("code", {
       children: content
@@ -3353,7 +3386,7 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.0.9","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.1.0","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
 
 /***/ })
 
