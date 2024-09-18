@@ -104,23 +104,53 @@ const Edit = props => {
     label: 'Language',
     value: language,
     options: [{
+      label: 'C',
+      value: 'c'
+    }, {
+      label: 'C++',
+      value: 'cpp'
+    }, {
+      label: 'C#',
+      value: 'csharp'
+    }, {
+      label: 'CSS',
+      value: 'css'
+    }, {
       label: 'HTML',
       value: 'markup'
+    }, {
+      label: 'Java',
+      value: 'java'
     }, {
       label: 'JavaScript',
       value: 'javascript'
     }, {
       label: 'JSON',
-      value: 'jason'
-    }, {
-      label: 'PHP',
-      value: 'php'
+      value: 'json'
     }, {
       label: 'Perl',
       value: 'perl'
     }, {
+      label: 'PHP',
+      value: 'php'
+    }, {
+      label: 'Python',
+      value: 'python'
+    }, {
+      label: 'React',
+      value: 'jsx'
+    }, {
+      label: 'Regex',
+      value: 'regex'
+    }, {
       label: 'SASS',
       value: 'sass'
+    }, {
+      label: 'SQL',
+      value: 'sql'
+    }, {
+      label: 'XML',
+      value: 'markup'
     }],
     onChange: onChangeLanguage
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.SelectControl, {
@@ -3386,7 +3416,7 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.1.0","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.1.1","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
 
 /***/ })
 

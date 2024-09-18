@@ -63,44 +63,68 @@ function getSections()
 }
 
 
-function getShortcodeSettings(){
-	$ret = [
-		'highlight-code' => [
-			'linenumber' => [
-				'field_type' => 'toggle',
-				'label' => __( 'Show line numbers', 'rrze-typesettings' ),
-				'type' => 'boolean',
-				'default' => true,
-				'checked' => true,
-			],
-			'theme' => [
-				'values' => [
-					[
-						'id' => 'default',
-						'val' => __( 'Default', 'rrze-typesettings' )
-					],
-					[
-						'id' => 'light',
-						'val' => __( 'Light', 'rrze-typesettings' )
-					],
-					[
-						'id' => 'dark',
-						'val' => __( 'Dark', 'rrze-typesettings' )
-					],
-					[
-						'id' => 'okaidia',
-						'val' => __( 'Okaidia', 'rrze-typesettings' )
-					],
-				],
-				'default' => 'default',
-				'field_type' => 'select',
-				'label' => __( 'Theme', 'rrze-typesettings' ),
-				'type' => 'string'
-			]
-		]
-	];
-	
-	return $ret;
+function getShortcodeSettings() {
+    $ret = [
+        'highlight-code' => [
+            'linenumber' => [
+                'field_type' => 'toggle',
+                'label' => __( 'Show line numbers', 'rrze-typesettings' ),
+                'type' => 'boolean',
+                'default' => true,
+                'checked' => true,
+            ],
+            'theme' => [
+                'values' => [
+                    [
+                        'id' => 'prism',
+                        'val' => __( 'Default', 'rrze-typesettings' )
+                    ],
+                    [
+                        'id' => 'prism-solarizedlight.min',
+                        'val' => __( 'Light', 'rrze-typesettings' )
+                    ],
+                    [
+                        'id' => 'dark',
+                        'val' => __( 'Dark', 'rrze-typesettings' )
+                    ],
+                    [
+                        'id' => 'okaidia',
+                        'val' => __( 'Okaidia', 'rrze-typesettings' )
+                    ],
+                ],
+                'default' => 'default',
+                'field_type' => 'select',
+                'label' => __( 'Theme', 'rrze-typesettings' ),
+                'type' => 'string',
+            ],
+            'lang' => [
+                'values' => [
+                    [ 'val' => 'C', 'id' => 'c' ],
+                    [ 'val' => 'C++', 'id' => 'cpp' ],
+                    [ 'val' => 'C#', 'id' => 'csharp' ],
+                    [ 'val' => 'CSS', 'id' => 'css' ],
+                    [ 'val' => 'HTML', 'id' => 'markup' ],
+                    [ 'val' => 'Java', 'id' => 'java' ],
+                    [ 'val' => 'JavaScript', 'id' => 'javascript' ],
+                    [ 'val' => 'JSON', 'id' => 'json' ],
+                    [ 'val' => 'Perl', 'id' => 'perl' ],
+                    [ 'val' => 'PHP', 'id' => 'php' ],
+                    [ 'val' => 'Python', 'id' => 'python' ],
+                    [ 'val' => 'React', 'id' => 'jsx' ],
+                    [ 'val' => 'Regex', 'id' => 'regex' ],
+                    [ 'val' => 'SASS', 'id' => 'sass' ],
+                    [ 'val' => 'SQL', 'id' => 'sql' ],
+                    [ 'val' => 'XML', 'id' => 'markup' ],
+                ],
+                'default' => 'javascript',
+                'field_type' => 'select',
+                'label' => __( 'Language', 'rrze-typesettings' ),
+                'type' => 'string',
+            ]
+        ]
+    ];
+    
+    return $ret;
 }
 
 

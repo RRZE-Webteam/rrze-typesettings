@@ -2193,7 +2193,7 @@ Prism.languages.js = Prism.languages.javascript;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return "" + chunkId + ".js?v=" + {"node_modules_prismjs_themes_prism-dark_min_css":"6f196ebf1f806059835f","node_modules_prismjs_themes_prism-okaidia_min_css":"2657a26750bd3e272d6f","node_modules_prismjs_themes_prism-solarizedlight_min_css":"21e33855ad8b4c1374ef","node_modules_prismjs_themes_prism_min_css":"ac88743e0246f32f6b90","node_modules_prismjs_components_prism-javascript_js":"79ba5b4df58e93311182","node_modules_prismjs_components_prism-php_js":"74be6a6028a1de75d04e","node_modules_prismjs_components_prism-markup_js":"3acf050bbb72379483ff","node_modules_prismjs_components_prism-json_js":"1a0fe41896fd3ce8ea26","node_modules_prismjs_components_prism-perl_js":"4973ae984d47924f5de0","node_modules_prismjs_components_prism-sass_js":"71fce8c5baaf436ad249","node_modules_prismjs_plugins_line-numbers_prism-line-numbers_js":"2741095044c143fd7b54","node_modules_prismjs_plugins_line-numbers_prism-line-numbers_css":"738924678daf6f8fac2d"}[chunkId] + "";
+/******/ 			return "" + chunkId + ".js?v=" + {"node_modules_prismjs_themes_prism-dark_min_css":"6f196ebf1f806059835f","node_modules_prismjs_themes_prism-okaidia_min_css":"2657a26750bd3e272d6f","node_modules_prismjs_themes_prism-solarizedlight_min_css":"21e33855ad8b4c1374ef","node_modules_prismjs_themes_prism_min_css":"ac88743e0246f32f6b90","node_modules_prismjs_components_prism-c_js":"31c03489e47e71ca4316","node_modules_prismjs_components_prism-cpp_js":"b0459957316bd107befe","vendors-node_modules_prismjs_components_prism-csharp_js":"00761ca09b3021579ec8","node_modules_prismjs_components_prism-css_js":"0cac2b46688800db7db8","node_modules_prismjs_components_prism-java_js":"b6672c168141a88e833b","node_modules_prismjs_components_prism-javascript_js":"79ba5b4df58e93311182","node_modules_prismjs_components_prism-json_js":"1a0fe41896fd3ce8ea26","node_modules_prismjs_components_prism-markup_js":"3acf050bbb72379483ff","node_modules_prismjs_components_prism-perl_js":"4973ae984d47924f5de0","node_modules_prismjs_components_prism-php_js":"74be6a6028a1de75d04e","node_modules_prismjs_components_prism-python_js":"dbfd6b1ac6f1a2faf48d","node_modules_prismjs_components_prism-jsx_js":"ed916c074ec5256e21ac","node_modules_prismjs_components_prism-regex_js":"5c2f36fcb99b33ec4534","node_modules_prismjs_components_prism-sass_js":"71fce8c5baaf436ad249","node_modules_prismjs_components_prism-sql_js":"e15491dec1b2d74cbfea","node_modules_prismjs_plugins_line-numbers_prism-line-numbers_js":"2741095044c143fd7b54","node_modules_prismjs_plugins_line-numbers_prism-line-numbers_css":"738924678daf6f8fac2d"}[chunkId] + "";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -2509,19 +2509,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamically import the language based on the data-language attribute
     try {
-      if (language === 'javascript') {
+      if (language === 'c') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-c_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-c */ "./node_modules/prismjs/components/prism-c.js", 23));
+      } else if (language === 'cpp') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-cpp_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-cpp */ "./node_modules/prismjs/components/prism-cpp.js", 23));
+      } else if (language === 'csharp') {
+        await __webpack_require__.e(/*! import() */ "vendors-node_modules_prismjs_components_prism-csharp_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-csharp */ "./node_modules/prismjs/components/prism-csharp.js", 23));
+      } else if (language === 'css') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-css_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-css */ "./node_modules/prismjs/components/prism-css.js", 23));
+      } else if (language === 'java') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-java_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-java */ "./node_modules/prismjs/components/prism-java.js", 23));
+      } else if (language === 'javascript') {
         await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-javascript_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-javascript */ "./node_modules/prismjs/components/prism-javascript.js", 23));
-      } else if (language === 'php') {
-        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-php_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-php */ "./node_modules/prismjs/components/prism-php.js", 23));
-      } else if (language === 'markup') {
-        // For HTML
-        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-markup_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-markup */ "./node_modules/prismjs/components/prism-markup.js", 23));
       } else if (language === 'json') {
         await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-json_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-json */ "./node_modules/prismjs/components/prism-json.js", 23));
+      } else if (language === 'markup') {
+        // For HTML and XML
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-markup_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-markup */ "./node_modules/prismjs/components/prism-markup.js", 23));
       } else if (language === 'perl') {
         await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-perl_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-perl */ "./node_modules/prismjs/components/prism-perl.js", 23));
+      } else if (language === 'php') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-php_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-php */ "./node_modules/prismjs/components/prism-php.js", 23));
+      } else if (language === 'python') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-python_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-python */ "./node_modules/prismjs/components/prism-python.js", 23));
+      } else if (language === 'jsx') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-jsx_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-jsx */ "./node_modules/prismjs/components/prism-jsx.js", 23));
+      } else if (language === 'regex') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-regex_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-regex */ "./node_modules/prismjs/components/prism-regex.js", 23));
       } else if (language === 'sass') {
         await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-sass_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-sass */ "./node_modules/prismjs/components/prism-sass.js", 23));
+      } else if (language === 'sql') {
+        await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-sql_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-sql */ "./node_modules/prismjs/components/prism-sql.js", 23));
       } else {
         console.warn(`Language "${language}" is not supported. Falling back to JavaScript.`);
         await __webpack_require__.e(/*! import() */ "node_modules_prismjs_components_prism-javascript_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/components/prism-javascript */ "./node_modules/prismjs/components/prism-javascript.js", 23)); // Fallback to JavaScript if the language is not supported

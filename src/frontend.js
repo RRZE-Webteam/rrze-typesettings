@@ -20,18 +20,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Dynamically import the language based on the data-language attribute
         try {
-            if (language === 'javascript') {
+            if (language === 'c') {
+                await import('prismjs/components/prism-c');
+            } else if (language === 'cpp') {
+                await import('prismjs/components/prism-cpp');
+            } else if (language === 'csharp') {
+                await import('prismjs/components/prism-csharp');
+            } else if (language === 'css') {
+                await import('prismjs/components/prism-css');
+            } else if (language === 'java') {
+                await import('prismjs/components/prism-java');
+            } else if (language === 'javascript') {
                 await import('prismjs/components/prism-javascript');
-            } else if (language === 'php') {
-                await import('prismjs/components/prism-php');
-            } else if (language === 'markup') {  // For HTML
-                await import('prismjs/components/prism-markup');
-            } else if (language === 'json') { 
+            } else if (language === 'json') {
                 await import('prismjs/components/prism-json');
+            } else if (language === 'markup') {  // For HTML and XML
+                await import('prismjs/components/prism-markup');
             } else if (language === 'perl') {
                 await import('prismjs/components/prism-perl');
+            } else if (language === 'php') {
+                await import('prismjs/components/prism-php');
+            } else if (language === 'python') {
+                await import('prismjs/components/prism-python');
+            } else if (language === 'jsx') {
+                await import('prismjs/components/prism-jsx');
+            } else if (language === 'regex') {
+                await import('prismjs/components/prism-regex');
             } else if (language === 'sass') {
                 await import('prismjs/components/prism-sass');
+            } else if (language === 'sql') {
+                await import('prismjs/components/prism-sql');
             } else {
                 console.warn(`Language "${language}" is not supported. Falling back to JavaScript.`);
                 await import('prismjs/components/prism-javascript');  // Fallback to JavaScript if the language is not supported
@@ -39,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error(`Error loading Prism component for "${language}":`, error);  // Log error if loading fails
         }
-
+        
         block.classList.add(`language-${language}`);  // Add the language class to the block
 
         // Dynamically import the line-numbers plugin if needed
