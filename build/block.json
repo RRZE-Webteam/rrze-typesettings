@@ -2,8 +2,8 @@
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
   "name": "create-block/rrze-typesettings",
-  "title": "Typesettings RRZE",
-  "version": "0.1.1",
+  "title": "Code Highlighter RRZE",
+  "version": "0.1.2",
   "description": "A block to show code highlighting",
   "category": "text",
   "icon": "editor-code",
@@ -22,7 +22,7 @@
       "type": "string",
       "default": "none"
     },
-    "linenumber": {
+    "linenumbers": {
       "type": "boolean",
       "default": true
     },

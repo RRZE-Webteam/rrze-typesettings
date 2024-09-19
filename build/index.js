@@ -49,7 +49,7 @@ const Edit = props => {
     attributes: {
       content,
       alignment,
-      linenumber,
+      linenumbers,
       theme,
       language
     },
@@ -59,7 +59,7 @@ const Edit = props => {
   const codeRef = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useRef)(null);
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.useEffect)(() => {
     if (codeRef.current) {
-      if (linenumber) {
+      if (linenumbers) {
         codeRef.current.classList.add('line-numbers');
       } else {
         codeRef.current.classList.remove('line-numbers');
@@ -67,7 +67,7 @@ const Edit = props => {
       codeRef.current.classList.add(`language-${language}`);
       prismjs__WEBPACK_IMPORTED_MODULE_3___default().highlightElement(codeRef.current);
     }
-  }, [content, linenumber, theme, language]);
+  }, [content, linenumbers, theme, language]);
   const onChangeContent = newContent => {
     setAttributes({
       content: newContent
@@ -83,9 +83,9 @@ const Edit = props => {
       theme: newTheme
     });
   };
-  const onChangeLinenumber = newLinenumber => {
+  const onChangelinenumbers = newlinenumbers => {
     setAttributes({
-      linenumber: newLinenumber
+      linenumbers: newlinenumbers
     });
   };
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('div', (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.BlockControls, {
@@ -172,20 +172,20 @@ const Edit = props => {
     onChange: onChangeTheme
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToggleControl, {
     label: 'Show line numbers',
-    checked: linenumber,
-    onChange: onChangeLinenumber
+    checked: linenumbers,
+    onChange: onChangelinenumbers
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('pre', {
     style: {
       textAlign: alignment
     },
     className: theme !== 'default' ? `prism-${theme}` : '',
-    'data-linenumbers': linenumber ? 'true' : 'false'
+    'data-linenumbers': linenumbers ? 'true' : 'false'
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_2__.createElement)('textarea', {
     className,
     value: content,
     placeholder: 'Enter your code here...',
     onChange: event => onChangeContent(event.target.value),
-    'data-linenumbers': linenumber ? 'true' : 'false',
+    'data-linenumbers': linenumbers ? 'true' : 'false',
     rows: 10,
     style: {
       width: '100%',
@@ -223,7 +223,7 @@ const save = props => {
     attributes: {
       content,
       alignment,
-      linenumber,
+      linenumbers,
       language,
       theme
     }
@@ -234,7 +234,7 @@ const save = props => {
         textAlign: alignment
       },
       'data-language': language,
-      'data-linenumbers': linenumber ? 'true' : 'false',
+      'data-linenumbers': linenumbers ? 'true' : 'false',
       'data-theme': theme
     }),
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("code", {
@@ -3416,7 +3416,7 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Typesettings RRZE","version":"0.1.1","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumber":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Code Highlighter RRZE","version":"0.1.2","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumbers":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
 
 /***/ })
 

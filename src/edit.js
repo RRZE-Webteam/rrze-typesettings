@@ -12,13 +12,13 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-markup';  // Für HTML
 
 const Edit = (props) => {
-    const { attributes: { content, alignment, linenumber, theme, language }, setAttributes, className } = props;
+    const { attributes: { content, alignment, linenumbers, theme, language }, setAttributes, className } = props;
     
     const codeRef = useRef(null);
 
     useEffect(() => {
         if (codeRef.current) {
-            if (linenumber) {
+            if (linenumbers) {
                 codeRef.current.classList.add('line-numbers');
             } else {
                 codeRef.current.classList.remove('line-numbers');
@@ -27,7 +27,7 @@ const Edit = (props) => {
             codeRef.current.classList.add(`language-${language}`);
             Prism.highlightElement(codeRef.current);
         }
-    }, [content, linenumber, theme, language]);
+    }, [content, linenumbers, theme, language]);
 
     const onChangeContent = (newContent) => {
         setAttributes({ content: newContent });
@@ -41,8 +41,8 @@ const Edit = (props) => {
         setAttributes({ theme: newTheme });
     };
 
-    const onChangeLinenumber = (newLinenumber) => {
-        setAttributes({ linenumber: newLinenumber });
+    const onChangelinenumbers = (newlinenumbers) => {
+        setAttributes({ linenumbers: newlinenumbers });
     };
 
     return (
@@ -99,8 +99,8 @@ const Edit = (props) => {
                     }),
                     el(ToggleControl, {
                         label: 'Show line numbers',
-                        checked: linenumber,
-                        onChange: onChangeLinenumber,
+                        checked: linenumbers,
+                        onChange: onChangelinenumbers,
                     })
                 )
             ),
@@ -109,14 +109,14 @@ const Edit = (props) => {
                 {
                     style: { textAlign: alignment },
                     className: theme !== 'default' ? `prism-${theme}` : '',
-                    'data-linenumbers': linenumber ? 'true' : 'false', 
+                    'data-linenumbers': linenumbers ? 'true' : 'false', 
                 },
                 el('textarea', {
                     className,
                     value: content,
                     placeholder: 'Enter your code here...',
                     onChange: (event) => onChangeContent(event.target.value),
-                    'data-linenumbers': linenumber ? 'true' : 'false', 
+                    'data-linenumbers': linenumbers ? 'true' : 'false', 
                     rows: 10,
                     style: { width: '100%', fontFamily: 'monospace', whiteSpace: 'pre', overflowWrap: 'normal', overflow: 'auto' },
                     ref: codeRef

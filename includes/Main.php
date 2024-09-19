@@ -61,7 +61,6 @@ class Main
 
     public function code_highlighter_init() {
         wp_register_script('code-highlighter-block', plugins_url( 'build/index.js', plugin_basename($this->pluginFile) ), array( 'wp-blocks', 'wp-element', 'wp-editor' ));
-        wp_enqueue_style('highlightjs-style', plugins_url('build/frontend.css', plugin_basename($this->pluginFile)));
     }
 
     public function code_highlighter_frontend_assets() {

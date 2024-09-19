@@ -2494,7 +2494,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('pre[data-language]').forEach(async block => {
     const language = block.getAttribute('data-language');
     const theme = block.getAttribute('data-theme');
-    const lineNumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
+    const linenumbersEnabled = block.getAttribute('data-linenumbers') === 'true';
 
     // Dynamically import the theme based on the data-theme attribute
     if (theme === 'dark') {
@@ -2550,7 +2550,7 @@ document.addEventListener('DOMContentLoaded', () => {
     block.classList.add(`language-${language}`); // Add the language class to the block
 
     // Dynamically import the line-numbers plugin if needed
-    if (lineNumbersEnabled) {
+    if (linenumbersEnabled) {
       await __webpack_require__.e(/*! import() */ "node_modules_prismjs_plugins_line-numbers_prism-line-numbers_js").then(__webpack_require__.t.bind(__webpack_require__, /*! prismjs/plugins/line-numbers/prism-line-numbers */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.js", 23)); // Load line numbers plugin
       await __webpack_require__.e(/*! import() */ "node_modules_prismjs_plugins_line-numbers_prism-line-numbers_css").then(__webpack_require__.bind(__webpack_require__, /*! prismjs/plugins/line-numbers/prism-line-numbers.css */ "./node_modules/prismjs/plugins/line-numbers/prism-line-numbers.css")); // Load line numbers CSS
       block.classList.add('line-numbers'); // Add the line-numbers class to the block

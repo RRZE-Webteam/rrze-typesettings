@@ -66,7 +66,7 @@ function getSections()
 function getShortcodeSettings() {
     $ret = [
         'highlight-code' => [
-            'linenumber' => [
+            'linenumbers' => [
                 'field_type' => 'toggle',
                 'label' => __( 'Show line numbers', 'rrze-typesettings' ),
                 'type' => 'boolean',
@@ -76,23 +76,27 @@ function getShortcodeSettings() {
             'theme' => [
                 'values' => [
                     [
-                        'id' => 'prism',
+                        'id' => 'default',
+                        'css' => 'prism.min.css',
                         'val' => __( 'Default', 'rrze-typesettings' )
                     ],
                     [
-                        'id' => 'prism-solarizedlight.min',
+                        'id' => 'light.min',
+                        'css' => 'prism-solarizedlight.min.css',
                         'val' => __( 'Light', 'rrze-typesettings' )
                     ],
                     [
                         'id' => 'dark',
+                        'css' => 'prism-dark.min.css',
                         'val' => __( 'Dark', 'rrze-typesettings' )
                     ],
                     [
                         'id' => 'okaidia',
+                        'css' => 'prism-okaidia.min.css',
                         'val' => __( 'Okaidia', 'rrze-typesettings' )
                     ],
                 ],
-                'default' => 'default',
+                'default' => '',
                 'field_type' => 'select',
                 'label' => __( 'Theme', 'rrze-typesettings' ),
                 'type' => 'string',

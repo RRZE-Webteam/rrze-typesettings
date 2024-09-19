@@ -1,13 +1,13 @@
 import { useBlockProps } from '@wordpress/block-editor';
 
 const save = (props) => {
-    const { attributes: { content, alignment, linenumber, language, theme } } = props;
+    const { attributes: { content, alignment, linenumbers, language, theme } } = props;
 
     return (
         <pre { ...useBlockProps.save({
             style: { textAlign: alignment },
             'data-language': language,
-            'data-linenumbers': linenumber ? 'true' : 'false',
+            'data-linenumbers': linenumbers ? 'true' : 'false',
             'data-theme': theme
         }) }>
             <code>
