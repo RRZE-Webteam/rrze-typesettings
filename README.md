@@ -1,7 +1,14 @@
 # RRZE-Typesettings
+
 WordPress-Plugin: Shortcode und Gutenberg Block, für das Highlightening von Code 
 
-## Verwendung des Shortcodes
+
+## Verwendung als Block
+
+Wählen Sie dazu den Block "Code Highlighter RRZE" aus.
+
+
+## Verwendung als Shortcode
 
 ```html
 [highlight-code]
