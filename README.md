@@ -31,6 +31,7 @@ Javascript ist vorausgewählt.
 
 Sprache => Wert für "lang":
 
+```
 C => c,
 C++ => cpp,
 C# => csharp,
@@ -47,4 +48,4 @@ Regex => regex,
 SASS => sass,
 SQL => sql,
 XML => markup
-
+```
