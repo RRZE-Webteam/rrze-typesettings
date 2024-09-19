@@ -49,3 +49,14 @@ SASS => sass,
 SQL => sql,
 XML => markup
 ```
+
+## Unterstützte Themes:
+
+```
+default
+light
+dark
+okaidia
+```
+
+
