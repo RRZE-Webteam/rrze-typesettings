@@ -12,9 +12,20 @@ Wählen Sie dazu den Block "Code Highlighter RRZE" aus.
 
 ```html
 [highlight-code]
+...
+[/highlight-code]
+
 [highlight-code lang="php"]
+...
+[/highlight-code]
+
 [highlight-code lang="python" theme="dark"]
+...
+[/highlight-code]
+
 [highlight-code lang="sql" linenumbers="off"]
+...
+[/highlight-code]
 ```
 
 ## Alle Attribute des Shortcodes
