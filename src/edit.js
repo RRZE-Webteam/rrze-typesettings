@@ -12,7 +12,7 @@ import 'prismjs/components/prism-javascript';
 import 'prismjs/components/prism-markup';  // Für HTML
 
 const Edit = (props) => {
-    const { attributes: { content, alignment, linenumbers, theme, language }, setAttributes, className } = props;
+    const { attributes: { content, alignment, linenumbers, theme, language, copy }, setAttributes, className } = props;
     
     const codeRef = useRef(null);
 
@@ -45,6 +45,10 @@ const Edit = (props) => {
         setAttributes({ linenumbers: newlinenumbers });
     };
 
+    const onToggleCopy = () => {
+        setAttributes({ copy: !copy });
+    };
+
     return (
         el(
             'div',
@@ -75,12 +79,9 @@ const Edit = (props) => {
                             { label: 'Java', value: 'java' },
                             { label: 'JavaScript', value: 'javascript' },
                             { label: 'JSON', value: 'json' },
-                            { label: 'Perl', value: 'perl' },
                             { label: 'PHP', value: 'php' },
                             { label: 'Python', value: 'python' },
                             { label: 'React', value: 'jsx' },
-                            { label: 'Regex', value: 'regex' },
-                            { label: 'SASS', value: 'sass' },
                             { label: 'SQL', value: 'sql' },
                             { label: 'XML', value: 'markup' },
                         ],
@@ -101,6 +102,11 @@ const Edit = (props) => {
                         label: 'Show line numbers',
                         checked: linenumbers,
                         onChange: onChangelinenumbers,
+                    }),
+                    el(ToggleControl, {
+                        label: 'Enable Copy to Clipboard',
+                        checked: copy,
+                        onChange: onToggleCopy,
                     })
                 )
             ),
@@ -120,7 +126,7 @@ const Edit = (props) => {
                     rows: 10,
                     style: { width: '100%', fontFamily: 'monospace', whiteSpace: 'pre', overflowWrap: 'normal', overflow: 'auto' },
                     ref: codeRef
-                }),
+                })
             )
         )
     );
