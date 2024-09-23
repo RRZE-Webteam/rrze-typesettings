@@ -60,8 +60,8 @@ class Shortcode
 
         $this->linenumbers = ($atts['linenumbers'] == 'off' || $atts['linenumbers'] == 'false' ? '' : 'line-numbers');
 
-        wp_enqueue_script('rrze-typesettings', plugins_url('src/rrze-typesettings.js', plugin_basename($this->pluginFile)), [], null, true);
-        wp_enqueue_style('rrze-typesettings-css', plugins_url('src/rrze-typesettings.css', plugin_basename($this->pluginFile)));
+        // wp_enqueue_script('rrze-typesettings', plugins_url('src/rrze-typesettings.js', plugin_basename($this->pluginFile)), [], null, true);
+        // wp_enqueue_style('rrze-typesettings-css', plugins_url('src/rrze-typesettings.css', plugin_basename($this->pluginFile)));
 
         $this->enqueue_prism_assets($atts['linenumbers'], $atts['theme'], $atts['lang']);
 

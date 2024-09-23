@@ -54,6 +54,9 @@ class Main
     {
         wp_enqueue_script('wp-i18n');
 
+        wp_enqueue_script('rrze-typesettings', plugins_url('assets/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)), [], null, true);
+        wp_enqueue_style('rrze-typesettings-css', plugins_url('assets/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)));
+
         $this->code_highlighter_frontend_assets();
     }
 

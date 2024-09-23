@@ -231,6 +231,7 @@ const save = props => {
     }
   } = props;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "rrze-typesettings",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("pre", {
       ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save({
         style: {
@@ -243,12 +244,24 @@ const save = props => {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("code", {
         children: content
       })
-    }), copy && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+    }), copy && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("button", {
       type: "button",
       className: "btn",
       id: "copyButton",
+      name: "copyButton",
       "data-typesettings": content,
-      children: "Copy to clipboard"
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        className: "typesettings-copy-img",
+        src: "data:image/svg+xml,%3Csvg height='1024' width='896' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M128 768h256v64H128v-64z m320-384H128v64h320v-64z m128 192V448L384 640l192 192V704h320V576H576z m-288-64H128v64h160v-64zM128 704h160v-64H128v64z m576 64h64v128c-1 18-7 33-19 45s-27 18-45 19H64c-35 0-64-29-64-64V192c0-35 29-64 64-64h192C256 57 313 0 384 0s128 57 128 128h192c35 0 64 29 64 64v320h-64V320H64v576h640V768zM128 256h512c0-35-29-64-64-64h-64c-35 0-64-29-64-64s-29-64-64-64-64 29-64 64-29 64-64 64h-64c-35 0-64 29-64 64z' fill='%23000000' /%3E%3C/svg%3E",
+        alt: "Copy to clipboard"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "screen-reader-text",
+        children: "Copy to clipboard"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+      id: "typesettings-tooltip",
+      className: "typesettings-tooltip",
+      children: "Copied to clipboard"
     })]
   });
 };
@@ -3426,7 +3439,7 @@ module.exports = window["wp"]["element"];
 /***/ ((module) => {
 
 "use strict";
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Code Highlighter RRZE","version":"1.0.10","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumbers":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"},"copy":{"type":"boolean","default":true}},"editorScript":"file:./index.js","script":["file:./frontend.js","file:./rrze-typesettings.js"],"style":["file:./style-index.css","file:./rrze-typesettings.css"],"editorStyle":"file:./editor-style.css"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/rrze-typesettings","title":"Code Highlighter RRZE","version":"1.1.0","description":"A block to show code highlighting","category":"text","icon":"editor-code","keywords":["highlight","code"],"textdomain":"rrze-typesettings","attributes":{"content":{"type":"string","source":"html","selector":"code"},"alignment":{"type":"string","default":"none"},"linenumbers":{"type":"boolean","default":true},"theme":{"type":"string","default":"default"},"language":{"type":"string","default":"javascript"},"copy":{"type":"boolean","default":true}},"editorScript":"file:./index.js","script":"file:./frontend.js","style":"file:./style-index.css","editorStyle":"file:./editor-style.css"}');
 
 /***/ })
 
