@@ -124,7 +124,15 @@ function getShortcodeSettings() {
                 'field_type' => 'select',
                 'label' => __( 'Language', 'rrze-typesettings' ),
                 'type' => 'string',
-            ]
+            ],
+            'copy' => [
+                'field_type' => 'toggle',
+                'label' => __( 'Copy to clipboard', 'rrze-typesettings' ),
+                'type' => 'boolean',
+                'default' => true,
+                'checked' => true,
+            ],
+
         ]
     ];
     
