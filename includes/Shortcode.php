@@ -44,29 +44,40 @@ class Shortcode
         if (is_null($content) || empty(trim($content))) {
             return;
         }
-
         $settings = getShortcodeSettings();
         $atts = shortcode_atts(
             [
                 'linenumbers' => $settings['highlight-code']['linenumbers']['default'],
                 'theme' => $settings['highlight-code']['theme']['default'],
-                'lang' => $settings['highlight-code']['lang']['default']
+                'lang' => $settings['highlight-code']['lang']['default'],
+                'copy' => $settings['highlight-code']['copy']['default'],
             ],
             $atts,
             'highlight-code'
         );
 
+        $atts['copy'] = filter_var($atts['copy'], FILTER_VALIDATE_BOOLEAN);
+
         $this->linenumbers = ($atts['linenumbers'] == 'off' || $atts['linenumbers'] == 'false' ? '' : 'line-numbers');
+
+        // wp_enqueue_script('rrze-typesettings', plugins_url('src/rrze-typesettings.js', plugin_basename($this->pluginFile)), [], null, true);
+        // wp_enqueue_style('rrze-typesettings-css', plugins_url('src/rrze-typesettings.css', plugin_basename($this->pluginFile)));
 
         $this->enqueue_prism_assets($atts['linenumbers'], $atts['theme'], $atts['lang']);
 
-
-        $output = sprintf(
+        $output = '<div class="rrze-typesettings">';
+        $output .= sprintf(
             '<pre class="%s"><code class="language-%s">%s</code></pre>',
             $this->linenumbers,
             $atts['lang'],
             $content
         );
+
+        if ($atts['copy']){
+            $output .= '<button type="button" class="btn" id="copyButton" name="copyButton" data-typesettings="' . $content . '"><img class="typesettings-copy-img" src="data:image/svg+xml,%3Csvg height=\'1024\' width=\'896\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M128 768h256v64H128v-64z m320-384H128v64h320v-64z m128 192V448L384 640l192 192V704h320V576H576z m-288-64H128v64h160v-64zM128 704h160v-64H128v64z m576 64h64v128c-1 18-7 33-19 45s-27 18-45 19H64c-35 0-64-29-64-64V192c0-35 29-64 64-64h192C256 57 313 0 384 0s128 57 128 128h192c35 0 64 29 64 64v320h-64V320H64v576h640V768zM128 256h512c0-35-29-64-64-64h-64c-35 0-64-29-64-64s-29-64-64-64-64 29-64 64-29 64-64 64h-64c-35 0-64 29-64 64z\' fill=\'%23000000\' /%3E%3C/svg%3E" alt="' . __('Copy to clipboard', 'rrze-typesettings') . '"><span class="screen-reader-text">' . __('Copy to clipboard', 'rrze-typesettings') . '</span></button><span id="typesettings-tooltip" class="typesettings-tooltip">' . __('Copied to clipboard', 'rrze-typesettings') . '</span>';
+        }
+
+        $output .= '</div>';
 
         return $output;
     }

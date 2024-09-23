@@ -29,13 +29,13 @@ class Settings
     {
         // General tab settings
         add_settings_section(
-            'rrze_shorturl_general_section',
+            'rrze_typesettings_general_section',
             '&nbsp;',
             [$this, 'render_general_section'],
-            'rrze_shorturl_general'
+            'rrze_typesettings_general'
         );
 
-        register_setting('rrze_shorturl_general', 'rrze_shorturl_general');
+        register_setting('rrze_typesettings_general', 'rrze_typesettings_general');
 
     }
 
@@ -61,12 +61,12 @@ class Settings
                 $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'services';
                 switch ($current_tab) {
                     case 'general':
-                        settings_fields('rrze_shorturl_general');
-                        do_settings_sections('rrze_shorturl_general');
+                        settings_fields('rrze_typesettings_general');
+                        do_settings_sections('rrze_typesettings_general');
                         break;
                     default:
-                        settings_fields('rrze_shorturl_services');
-                        do_settings_sections('rrze_shorturl_services');
+                        settings_fields('rrze_typesettings_services');
+                        do_settings_sections('rrze_typesettings_services');
                 }
                 ?>
             </div>
@@ -97,7 +97,7 @@ class Settings
                 </div>
             <?php endif; ?>
             <form method="post" action="" id="general-form">
-                <table class="shorturl-wp-list-table widefat fixed striped">
+                <table class="typesettings-wp-list-table widefat fixed striped">
                     <tbody>
                         <tr>
                             <td>Dieser Bereich dient nur als Gerüst</td>

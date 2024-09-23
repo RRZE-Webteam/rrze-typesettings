@@ -23,7 +23,11 @@ Wählen Sie dazu den Block "Code Highlighter RRZE" aus.
 ...
 [/highlight-code]
 
-[highlight-code lang="sql" linenumbers="off"]
+[highlight-code lang="sql" linenumbers="false"]
+...
+[/highlight-code]
+
+[highlight-code copy="false"]
 ...
 [/highlight-code]
 ```
@@ -35,6 +39,7 @@ Wählen Sie dazu den Block "Code Highlighter RRZE" aus.
 lang=".."
 theme=".."
 linenumbers=".."
+copy=".."
 ]
 ```
 
@@ -44,6 +49,7 @@ Alle Attribute sind optional.
 
 Zeilennummern werden angezeigt.
 Javascript ist vorausgewählt.
+Button "Copy to clipboard" wird angezeigt.
 
 ## Unterstützte Sprachen:
 

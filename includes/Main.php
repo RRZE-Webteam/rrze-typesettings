@@ -53,13 +53,15 @@ class Main
     public function enqueueScripts()
     {
         wp_enqueue_script('wp-i18n');
-        // wp_enqueue_script('rrze-typesettings', plugins_url('src/rrze-typesettings.js', plugin_basename($this->pluginFile)), array('jquery'), null, true);
-        // wp_enqueue_style('rrze-typesettings-css', plugins_url('src/rrze-typesettings.scss', plugin_basename($this->pluginFile)));
+
+        wp_enqueue_script('rrze-typesettings', plugins_url('assets/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)), [], null, true);
+        wp_enqueue_style('rrze-typesettings-css', plugins_url('assets/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)));
 
         $this->code_highlighter_frontend_assets();
     }
 
     public function code_highlighter_init() {
+        remove_filter( 'the_content', 'wpautop' );
         wp_register_script('code-highlighter-block', plugins_url( 'build/index.js', plugin_basename($this->pluginFile) ), array( 'wp-blocks', 'wp-element', 'wp-editor' ));
     }
 
