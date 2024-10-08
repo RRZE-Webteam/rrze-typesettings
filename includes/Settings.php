@@ -53,7 +53,7 @@ class Settings
 
             <h2 class="nav-tab-wrapper">
                 <a href="?page=rrze-typesettings&tab=general"
-                class="nav-tab <?php echo isset($_GET['tab']) && esc_attr($_GET['tab']) === 'general' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html(__('General', 'rrze-typesettings')); ?></a>
+                    class="nav-tab <?php echo isset($_GET['tab']) && sanitize_text_field(wp_unslash($_GET['tab'])) === 'general' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html(__('General', 'rrze-typesettings')); ?></a>
             </h2>
 
             <div class="tab-content">
