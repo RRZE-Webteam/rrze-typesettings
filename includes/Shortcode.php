@@ -22,9 +22,9 @@ class Shortcode
 
     public function enqueue_prism_assets($linenumbers, $theme, $lang)
     {
-        $this->theme_css = $this->get_theme_css_from_settings($theme, $this->settings['highlight-code']['theme']['values']);
+        $this->theme_css = $this->get_theme_css_from_settings($this->settings['highlight-code']['theme']['values'], $theme);
 
-        $this->lang_js = $this->get_lang_from_settings($lang, $this->settings['highlight-code']['lang']['values']);
+        $this->lang_js = $this->get_lang_from_settings($this->settings['highlight-code']['lang']['values'],$lang);
 
         $this->lang_js = !empty($this->lang_js) ? $this->lang_js : 'javascript';
 
@@ -82,7 +82,7 @@ class Shortcode
         return $output;
     }
 
-    private function get_theme_css_from_settings($theme = null, $theme_options)
+    private function get_theme_css_from_settings($theme_options, $theme = null)
     {
         if (is_null($theme)) {
             return 'prism.min.css';
@@ -96,7 +96,7 @@ class Shortcode
         return 'prism.min.css';
     }
 
-    private function get_lang_from_settings($lang = null, $lang_options)
+    private function get_lang_from_settings($lang_options, $lang = null)
     {
         if (is_null($lang)) {
             return 'javascript';
