@@ -1,3 +1,21 @@
+=== RRZE Typesettings ===
+Contributors: rrze-webteam
+Plugin URI: https://github.com/RRZE-Webteam/rrze-typesettings/
+Tags: code, syntax highlighting, shortcode, block
+Requires at least: 6.4
+Tested up to: 6.6
+Requires PHP: 8.2
+Stable tag: 1.2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author: RRZE Webteam
+Author URI: https://blogs.fau.de/webworking/
+Text Domain: rrze-typesettings
+Domain Path: /languages
+
+Plugin zur Darstellung von Code.
+
+
 # RRZE-Typesettings
 
 WordPress-Plugin: Shortcode und Gutenberg Block, für das Highlightening von Code 
