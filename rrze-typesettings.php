@@ -4,7 +4,7 @@
 Plugin Name:     RRZE Typesettings
 Plugin URI:      https://github.com/RRZE-Webteam/rrze-typesettings/
 Description:     Plugin zur Darstellung von Code
-Version:         1.2.1
+Version:         1.2.2
 Requires at least: 6.4
 Requires PHP:      8.2
 Author:          RRZE Webteam
@@ -105,7 +105,7 @@ function deactivation()
 }
 
 
-function rrze_designsystem_init()
+function rrze_typesettings_init()
 {
     register_block_type(__DIR__ . '/build');
 }
@@ -134,6 +134,6 @@ function loaded()
         $main->onLoaded();
     }
 
-    add_action('init', __NAMESPACE__ . '\rrze_designsystem_init');
+    add_action('init', __NAMESPACE__ . '\rrze_typesettings_init');
 
 }
