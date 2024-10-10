@@ -22,21 +22,20 @@ class Shortcode
 
     public function enqueue_assets($theme, $lang)
     {
-        $this->theme_css = $this->get_theme_css_from_settings($theme, $this->settings['highlight-code']['theme']['values']);
-        $this->lang_js = $this->get_lang_from_settings($lang, $this->settings['highlight-code']['lang']['values']);
-        $this->lang_js = !empty($this->lang_js) ? $this->lang_js : 'javascript';
+        $this->theme_css = $this->get_theme_css_from_settings($this->settings['highlight-code']['theme']['values'], $theme);
+        $this->lang_js = $this->get_lang_from_settings($this->settings['highlight-code']['lang']['values'], $lang);
 
         wp_enqueue_script('rrze-typesettings');
         wp_enqueue_style('rrze-typesettings');
 
-        wp_enqueue_script('prismjs');
-        wp_enqueue_script('prism-lang', plugins_url('assets/js/prism-' . $this->lang_js . '.min.js', plugin_basename($this->pluginFile)), ['prismjs'], null, true);
         wp_enqueue_style('prismjs');
         wp_enqueue_style('prismjs', plugins_url('assets/css/' . $this->theme_css, plugin_basename($this->pluginFile)));
+        wp_enqueue_script('prismjs');
+        wp_enqueue_script('prism-lang', plugins_url('assets/js/prism-' . $this->lang_js . '.min.js', plugin_basename($this->pluginFile)), ['prismjs'], null, false);
 
         if (!empty($this->linenumbers)) {
-            wp_enqueue_script('prismjs-linenumbers-js', plugins_url('assets/js/prism-line-numbers.min.js', plugin_basename($this->pluginFile)), ['prismjs', 'prism-lang'], null, true);
-            wp_enqueue_style('prismjs-linenumbers-css', plugins_url('assets/css/prism-line-numbers.min.css', plugin_basename($this->pluginFile)), ['prismjs']);
+            wp_enqueue_script('prismjs-linenumbers', plugins_url('assets/js/prism-line-numbers.min.js', plugin_basename($this->pluginFile)), ['prismjs', 'prism-lang'], null, false);
+            wp_enqueue_style('prismjs-linenumbers', plugins_url('assets/css/prism-line-numbers.min.css', plugin_basename($this->pluginFile)), ['prismjs']);
         }
     }
 
@@ -58,6 +57,7 @@ class Shortcode
         );
 
         $atts['copy'] = filter_var($atts['copy'], FILTER_VALIDATE_BOOLEAN);
+
         $this->linenumbers = ($atts['linenumbers'] == 'off' || $atts['linenumbers'] == 'false' ? '' : 'line-numbers');
 
         $this->enqueue_assets($atts['theme'], $atts['lang']);
@@ -79,7 +79,7 @@ class Shortcode
         return $output;
     }
 
-    private function get_theme_css_from_settings($theme = null, $theme_options)
+    private function get_theme_css_from_settings($theme_options, $theme)
     {
         if (is_null($theme)) {
             return 'prism.min.css';
@@ -93,11 +93,13 @@ class Shortcode
         return 'prism.min.css';
     }
 
-    private function get_lang_from_settings($lang = null, $lang_options)
+    private function get_lang_from_settings($lang_options, $lang = null)
     {
         if (is_null($lang)) {
             return 'javascript';
         }
+
+        $lang = strtolower($lang);
 
         foreach ($lang_options as $nr => $option) {
             if ($option['id'] === $lang) {
