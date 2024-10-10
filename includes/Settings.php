@@ -44,7 +44,7 @@ class Settings
     // Render the options page
     public function render_options_page()
     {
-        $_GET['tab'] = (empty($_GET['tab']) ? 'general' : $_GET['tab']);
+        $_GET['tab'] = (empty($_GET['tab']) ? 'general' : sanitize_text_field(wp_unslash($_GET['tab'])));
 
         ?>
         <div class="wrap">
@@ -53,12 +53,12 @@ class Settings
 
             <h2 class="nav-tab-wrapper">
                 <a href="?page=rrze-typesettings&tab=general"
-                    class="nav-tab <?php echo isset($_GET['tab']) && $_GET['tab'] === 'general' ? 'nav-tab-active' : ''; ?>"><?php echo __('General', 'rrze-typesettings'); ?></a>
+                    class="nav-tab <?php echo isset($_GET['tab']) && sanitize_text_field(wp_unslash($_GET['tab'])) === 'general' ? 'nav-tab-active' : ''; ?>"><?php echo esc_html(__('General', 'rrze-typesettings')); ?></a>
             </h2>
 
             <div class="tab-content">
                 <?php
-                $current_tab = isset($_GET['tab']) ? $_GET['tab'] : 'services';
+                $current_tab = isset($_GET['tab']) ? sanitize_text_field(wp_unslash($_GET['tab'])) : 'services';
                 switch ($current_tab) {
                     case 'general':
                         settings_fields('rrze_typesettings_general');
@@ -83,7 +83,7 @@ class Settings
         $aOptions = json_decode(get_option('rrze-typesettings'), true);
 
         if (isset($_POST['submit_general'])) {
-            update_option('rrze-typesettings', json_encode($aOptions));
+            update_option('rrze-typesettings', wp_json_encode($aOptions));
         }
 
         ?>
@@ -92,7 +92,7 @@ class Settings
             <?php if (!empty($message)): ?>
                 <div class="<?php echo strpos($message, 'Error') !== false ? 'error' : 'updated'; ?>">
                     <p>
-                        <?php echo $message; ?>
+                        <?php echo esc_html($message); ?>
                     </p>
                 </div>
             <?php endif; ?>
@@ -105,7 +105,7 @@ class Settings
                     </tbody>
                 </table>
                 <button type="submit" name="submit_general" class="button button-primary">
-                    <?php echo __('Save Changes', 'rrze-typesettings'); ?>
+                    <?php echo esc_html(__('Save Changes', 'rrze-typesettings')); ?>
                 </button>
             </form>
         </div>

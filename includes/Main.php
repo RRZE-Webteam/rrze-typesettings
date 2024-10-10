@@ -35,38 +35,24 @@ class Main
      */
     public function onLoaded()
     {
-        add_action( 'init', [$this, 'code_highlighter_init']);
+        add_action('init', [$this, 'register_assets']);
 
-        add_action('enqueue_block_editor_assets', [$this, 'enqueueScripts']);
-        add_action('wp_enqueue_scripts', [$this, 'enqueueScripts']);
-        add_action('admin_enqueue_scripts', [$this, 'enqueueScripts']);
+        add_action('enqueue_block_assets', [$this, 'enqueue_assets']);
 
         $this->settings = new Settings();
         $shortcode = new Shortcode($this->pluginFile);
-
     }
 
 
-    /**
-     * Enqueue der globale Skripte.
-     */
-    public function enqueueScripts()
-    {
-        wp_enqueue_script('wp-i18n');
-
-        wp_enqueue_script('rrze-typesettings', plugins_url('assets/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)), [], null, true);
-        wp_enqueue_style('rrze-typesettings-css', plugins_url('assets/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)));
-
-        $this->code_highlighter_frontend_assets();
+    public function register_assets(){
+        wp_register_script('rrze-typesettings', plugins_url('assets/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)), [], filemtime(plugin_dir_path($this->pluginFile) . 'assets/js/rrze-typesettings.min.js'), true);
+        wp_register_style('rrze-typesettings', plugins_url('assets/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)), [], filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/rrze-typesettings.min.css'));
+        wp_register_script('prismjs', plugins_url('assets/js/prism.js', plugin_basename($this->pluginFile)), [], null, true);
     }
 
-    public function code_highlighter_init() {
-        remove_filter( 'the_content', 'wpautop' );
-        wp_register_script('code-highlighter-block', plugins_url( 'build/index.js', plugin_basename($this->pluginFile) ), array( 'wp-blocks', 'wp-element', 'wp-editor' ));
-    }
-
-    public function code_highlighter_frontend_assets() {
-        wp_enqueue_script('highlightjs-init', plugins_url('build/frontend.js', plugin_basename($this->pluginFile)), array(), null, true);
+    public function enqueue_assets(){
+        wp_enqueue_script('rrze-typesettings');
+        wp_enqueue_style('rrze-typesettings');        
     }
 
 }

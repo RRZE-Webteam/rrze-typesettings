@@ -4,7 +4,7 @@
 Plugin Name:     RRZE Typesettings
 Plugin URI:      https://github.com/RRZE-Webteam/rrze-typesettings/
 Description:     Plugin zur Darstellung von Code
-Version:         1.1.1
+Version:         1.2.2
 Requires at least: 6.4
 Requires PHP:      8.2
 Author:          RRZE Webteam
@@ -67,10 +67,10 @@ function system_requirements()
 {
     $error = '';
     if (version_compare(PHP_VERSION, RRZE_PHP_VERSION, '<')) {
-        /* Übersetzer: 1: aktuelle PHP-Version, 2: erforderliche PHP-Version */
+        /* translators: 1: current PHP version, 2: required PHP version */
         $error = sprintf(__('The server is running PHP version %1$s. The Plugin requires at least PHP version %2$s.', 'rrze-typesettings'), PHP_VERSION, RRZE_PHP_VERSION);
     } elseif (version_compare($GLOBALS['wp_version'], RRZE_WP_VERSION, '<')) {
-        /* Übersetzer: 1: aktuelle WP-Version, 2: erforderliche WP-Version */
+        /* translators: 1: current WordPress version, 2: required WordPress version */
         $error = sprintf(__('The server is running WordPress version %1$s. The Plugin requires at least WordPress version %2$s.', 'rrze-typesettings'), $GLOBALS['wp_version'], RRZE_WP_VERSION);
     }
     return $error;
@@ -89,7 +89,7 @@ function activation()
     // Wenn die Überprüfung fehlschlägt, dann wird das Plugin automatisch deaktiviert.
     if ($error = system_requirements()) {
         deactivate_plugins(plugin_basename(__FILE__), false, true);
-        wp_die($error);
+        wp_die(esc_html($error));
     }
 
     // Ab hier können die Funktionen hinzugefügt werden,
@@ -105,9 +105,9 @@ function deactivation()
 }
 
 
-function rrze_designsystem_init()
+function rrze_typesettings_init()
 {
-	register_block_type( __DIR__ . '/build' );
+    register_block_type(__DIR__ . '/build');
 }
 
 /**
@@ -134,6 +134,6 @@ function loaded()
         $main->onLoaded();
     }
 
-    add_action('init', __NAMESPACE__ . '\rrze_designsystem_init');
+    add_action('init', __NAMESPACE__ . '\rrze_typesettings_init');
 
 }
