@@ -1,6 +1,7 @@
 import { useBlockProps, BlockControls, InspectorControls, AlignmentToolbar } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { createElement as el, useRef, useEffect } from '@wordpress/element';
+import { __ } from '@wordpress/i18n'; // Import the __ function for translations
 import Prism from 'prismjs';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import 'prismjs/themes/prism.css';
@@ -66,45 +67,45 @@ const Edit = (props) => {
                 { key: 'settings' },
                 el(
                     PanelBody,
-                    { title: 'Code Settings', initialOpen: true },
+                    { title: __('Code Settings', 'rrze-typesettings'), initialOpen: true }, // Translated title
                     el(SelectControl, {
-                        label: 'Language',
+                        label: __('Language', 'rrze-typesettings'), // Translated label
                         value: language,
                         options: [
-                            { label: 'C', value: 'c' },
-                            { label: 'C++', value: 'cpp' },
-                            { label: 'C#', value: 'csharp' },
-                            { label: 'CSS', value: 'css' },
-                            { label: 'HTML', value: 'markup' },
-                            { label: 'Java', value: 'java' },
-                            { label: 'JavaScript', value: 'javascript' },
-                            { label: 'JSON', value: 'json' },
-                            { label: 'PHP', value: 'php' },
-                            { label: 'Python', value: 'python' },
-                            { label: 'React', value: 'jsx' },
-                            { label: 'SQL', value: 'sql' },
-                            { label: 'XML', value: 'markup' },
+                            { label: __('C', 'rrze-typesettings'), value: 'c' },
+                            { label: __('C++', 'rrze-typesettings'), value: 'cpp' },
+                            { label: __('C#', 'rrze-typesettings'), value: 'csharp' },
+                            { label: __('CSS', 'rrze-typesettings'), value: 'css' },
+                            { label: __('HTML', 'rrze-typesettings'), value: 'markup' },
+                            { label: __('Java', 'rrze-typesettings'), value: 'java' },
+                            { label: __('JavaScript', 'rrze-typesettings'), value: 'javascript' },
+                            { label: __('JSON', 'rrze-typesettings'), value: 'json' },
+                            { label: __('PHP', 'rrze-typesettings'), value: 'php' },
+                            { label: __('Python', 'rrze-typesettings'), value: 'python' },
+                            { label: __('React', 'rrze-typesettings'), value: 'jsx' },
+                            { label: __('SQL', 'rrze-typesettings'), value: 'sql' },
+                            { label: __('XML', 'rrze-typesettings'), value: 'markup' },
                         ],
                         onChange: onChangeLanguage,
                     }),
                     el(SelectControl, {
-                        label: 'Theme',
+                        label: __('Theme', 'rrze-typesettings'), // Translated label
                         value: theme,
                         options: [
-                            { label: 'Default', value: 'default' },
-                            { label: 'Light', value: 'light' },
-                            { label: 'Dark', value: 'dark' },
-                            { label: 'Okaidia', value: 'okaidia' },
+                            { label: __('Default', 'rrze-typesettings'), value: 'default' },
+                            { label: __('Light', 'rrze-typesettings'), value: 'light' },
+                            { label: __('Dark', 'rrze-typesettings'), value: 'dark' },
+                            { label: __('Okaidia', 'rrze-typesettings'), value: 'okaidia' },
                         ],
                         onChange: onChangeTheme,
                     }),
                     el(ToggleControl, {
-                        label: 'Show line numbers',
+                        label: __('Show line numbers', 'rrze-typesettings'), // Translated label
                         checked: linenumbers,
                         onChange: onChangelinenumbers,
                     }),
                     el(ToggleControl, {
-                        label: 'Enable Copy to Clipboard',
+                        label: __('Enable Copy to Clipboard', 'rrze-typesettings'), // Translated label
                         checked: copy,
                         onChange: onToggleCopy,
                     })
@@ -120,7 +121,7 @@ const Edit = (props) => {
                 el('textarea', {
                     className,
                     value: content,
-                    placeholder: 'Enter your code here...',
+                    placeholder: __('Enter your code here...', 'rrze-typesettings'), // Translated placeholder
                     onChange: (event) => onChangeContent(event.target.value),
                     'data-linenumbers': linenumbers ? 'true' : 'false', 
                     rows: 10,

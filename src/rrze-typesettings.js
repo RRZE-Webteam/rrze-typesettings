@@ -14,7 +14,7 @@ jQuery(document).ready(function ($) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(mycode)
                     .then(() => {
-                        showTooltip('URL copied!');
+                        showTooltip(__('Code copied!', 'rrze-typesettings'));
                     })
                     .catch(err => {
                         console.error('Copy failed:', err);
@@ -28,7 +28,7 @@ jQuery(document).ready(function ($) {
                 textArea.select();
                 try {
                     document.execCommand('copy');
-                    showTooltip('Code copied!');
+                    showTooltip(__('Code copied!', 'rrze-typesettings'));
                 } catch (err) {
                     console.error('Copy failed:', err);
                 } finally {
@@ -46,5 +46,4 @@ jQuery(document).ready(function ($) {
             typesettings_tooltip.style.display = 'none';
         }, 2000); // Hide the typesettings-tooltip after 2 seconds
     }
-
 });

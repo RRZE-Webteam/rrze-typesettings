@@ -1,0 +1,210 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: RRZE Typesettings\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-18 17:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.6.11; wp-6.6.2\n"
+"X-Domain: rrze-typesettings"
+
+#: build/block.json:1 src/block.json:1
+msgctxt "block description"
+msgid "A block to show code highlighting"
+msgstr ""
+
+#: build/block.json:1 src/block.json:1
+msgctxt "block keyword"
+msgid "code"
+msgstr ""
+
+#: build/block.json:1 src/block.json:1
+msgctxt "block keyword"
+msgid "highlight"
+msgstr ""
+
+#: build/block.json:1 src/block.json:1
+msgctxt "block title"
+msgid "Code Highlighter RRZE"
+msgstr ""
+
+#: src/edit.js:75
+msgid "C"
+msgstr ""
+
+#: src/edit.js:77
+msgid "C#"
+msgstr ""
+
+#: src/edit.js:76
+msgid "C++"
+msgstr ""
+
+#: src/rrze-typesettings.js:17 src/rrze-typesettings.js:31
+msgid "Code copied!"
+msgstr ""
+
+#: src/edit.js:70
+msgid "Code Settings"
+msgstr ""
+
+#: includes/Shortcode.php:74
+msgid "Copied to clipboard"
+msgstr ""
+
+#: config/config.php:130 includes/Shortcode.php:74 includes/Shortcode.php:74
+msgid "Copy to clipboard"
+msgstr ""
+
+#: src/edit.js:78
+msgid "CSS"
+msgstr ""
+
+#: config/config.php:91 src/edit.js:97
+msgid "Dark"
+msgstr ""
+
+#: config/config.php:81 src/edit.js:95
+msgid "Default"
+msgstr ""
+
+#: src/edit.js:108
+msgid "Enable Copy to Clipboard"
+msgstr ""
+
+#: src/edit.js:124
+msgid "Enter your code here..."
+msgstr ""
+
+#: config/config.php:45
+msgid "For more information"
+msgstr ""
+
+#: includes/Settings.php:56
+msgid "General"
+msgstr ""
+
+#: config/config.php:42
+msgid "Here comes the Context Help content."
+msgstr ""
+
+#: src/edit.js:79
+msgid "HTML"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://blogs.fau.de/webworking/"
+msgstr ""
+
+#. URI of the plugin
+msgid "https://github.com/RRZE-Webteam/rrze-typesettings/"
+msgstr ""
+
+#: src/edit.js:80
+msgid "Java"
+msgstr ""
+
+#: src/edit.js:81
+msgid "JavaScript"
+msgstr ""
+
+#: src/edit.js:82
+msgid "JSON"
+msgstr ""
+
+#: config/config.php:125 src/edit.js:72
+msgid "Language"
+msgstr ""
+
+#: config/config.php:86 src/edit.js:96
+msgid "Light"
+msgstr ""
+
+#: config/config.php:60
+msgid "Logfile"
+msgstr ""
+
+#: config/config.php:96 src/edit.js:98
+msgid "Okaidia"
+msgstr ""
+
+#: config/config.php:44
+msgid "Overview"
+msgstr ""
+
+#: src/edit.js:83
+msgid "PHP"
+msgstr ""
+
+#. Description of the plugin
+msgid "Plugin zur Darstellung von Code"
+msgstr ""
+
+#: src/edit.js:84
+msgid "Python"
+msgstr ""
+
+#: src/edit.js:85
+msgid "React"
+msgstr ""
+
+#. Name of the plugin
+#: config/config.php:24 config/config.php:25
+msgid "RRZE Typesettings"
+msgstr ""
+
+#: config/config.php:28
+msgid "RRZE Typesettings Settings"
+msgstr ""
+
+#. Author of the plugin
+msgid "RRZE Webteam"
+msgstr ""
+
+#: config/config.php:45
+msgid "RRZE Webteam on Github"
+msgstr ""
+
+#: includes/Settings.php:108
+msgid "Save Changes"
+msgstr ""
+
+#: config/config.php:71 src/edit.js:103
+msgid "Show line numbers"
+msgstr ""
+
+#: src/edit.js:86
+msgid "SQL"
+msgstr ""
+
+#. 1: current PHP version, 2: required PHP version
+#: rrze-typesettings.php:71
+#, php-format
+msgid ""
+"The server is running PHP version %1$s. The Plugin requires at least PHP "
+"version %2$s."
+msgstr ""
+
+#. 1: current WordPress version, 2: required WordPress version
+#: rrze-typesettings.php:74
+#, php-format
+msgid ""
+"The server is running WordPress version %1$s. The Plugin requires at least "
+"WordPress version %2$s."
+msgstr ""
+
+#: config/config.php:101 src/edit.js:92
+msgid "Theme"
+msgstr ""
+
+#: src/edit.js:87
+msgid "XML"
+msgstr ""
