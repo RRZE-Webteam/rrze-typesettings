@@ -5,7 +5,7 @@ Tags: code, syntax highlighting, shortcode, block
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 8.2
-Stable tag: 1.2.5
+Stable tag: 1.2.11
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Author: RRZE Webteam

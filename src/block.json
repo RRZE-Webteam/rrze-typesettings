@@ -3,7 +3,6 @@
     "apiVersion": 3,
     "name": "create-block/rrze-typesettings",
     "title": "Code Highlighter RRZE",
-    "version": "1.2.3",
     "description": "A block to show code highlighting",
     "category": "text",
     "icon": "editor-code",
@@ -39,8 +38,8 @@
             "default": true
         }
     },
-    "editorScript": "file:./index.js",
-    "script": "file:./frontend.js",
-    "style": "file:./style-index.css",
-    "editorStyle": "file:./editor-style.css"
+    "editorScript": "file:./build/index.js",
+    "script": "file:./build/frontend.js",
+    "style": "file:./build/style-index.css",
+    "editorStyle": "file:./build/editor-style.css"
 }
