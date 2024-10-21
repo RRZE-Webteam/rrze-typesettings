@@ -1,3 +1,5 @@
+import { __ } from '@wordpress/i18n';
+
 jQuery(document).ready(function ($) {
     // Attach event listener to the "Copy to clipboard" image
     $(document).on('click', '#copyButton', function (event) {

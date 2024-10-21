@@ -45,7 +45,16 @@ class Main
 
 
     public function register_assets(){
-        wp_register_script('rrze-typesettings', plugins_url('assets/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)), [], filemtime(plugin_dir_path($this->pluginFile) . 'assets/js/rrze-typesettings.min.js'), true);
+        wp_register_script(
+            'rrze-typesettings',
+            plugins_url('assets/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)),
+            ['wp-i18n'], // Ensure wp-i18n is loaded for translations
+            filemtime(plugin_dir_path($this->pluginFile) . 'assets/js/rrze-typesettings.min.js'),
+            true
+        );        
+
+        wp_set_script_translations('rrze-typesettings', 'rrze-typesettings', plugin_dir_path($this->pluginFile) . 'languages');
+        
         wp_register_style('rrze-typesettings', plugins_url('assets/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)), [], filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/rrze-typesettings.min.css'));
         wp_register_script('prismjs', plugins_url('assets/js/prism.js', plugin_basename($this->pluginFile)), [], null, true);
     }
