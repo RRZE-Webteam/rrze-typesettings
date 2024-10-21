@@ -1,45 +1,45 @@
 {
-    "$schema": "https://schemas.wp.org/trunk/block.json",
-    "apiVersion": 3,
-    "name": "create-block/rrze-typesettings",
-    "title": "Code Highlighter RRZE",
-    "description": "A block to show code highlighting",
-    "category": "text",
-    "icon": "editor-code",
-    "keywords": [
-        "highlight",
-        "code"
-    ],
-    "textdomain": "rrze-typesettings",
-    "attributes": {
-        "content": {
-            "type": "string",
-            "source": "html",
-            "selector": "code"
-        },
-        "alignment": {
-            "type": "string",
-            "default": "none"
-        },
-        "linenumbers": {
-            "type": "boolean",
-            "default": true
-        },
-        "theme": {
-            "type": "string",
-            "default": "default"
-        },
-        "language": {
-            "type": "string",
-            "default": "javascript"
-        },
-        "copy": {
-            "type": "boolean",
-            "default": true
-        }
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/rrze-typesettings",
+  "title": "Code Highlighter RRZE",
+  "description": "A block to show code highlighting",
+  "category": "text",
+  "icon": "editor-code",
+  "keywords": [
+    "highlight",
+    "code"
+  ],
+  "textdomain": "rrze-typesettings",
+  "attributes": {
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "code"
     },
-    "editorScript": "file:./build/index.js",
-    "script": "file:./build/frontend.js",
-    "style": "file:./build/style-index.css",
-    "editorStyle": "file:./build/editor-style.css"
+    "alignment": {
+      "type": "string",
+      "default": "none"
+    },
+    "linenumbers": {
+      "type": "boolean",
+      "default": true
+    },
+    "theme": {
+      "type": "string",
+      "default": "default"
+    },
+    "language": {
+      "type": "string",
+      "default": "javascript"
+    },
+    "copy": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "editorScript": "file:./build/index.js",
+  "script": "file:./build/frontend.js",
+  "style": "file:./build/style-index.css",
+  "editorStyle": "file:./build/editor-style.css"
 }
