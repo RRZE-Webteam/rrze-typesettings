@@ -1,27 +1,31 @@
-.rrze-typesettings button.btn {
-    cursor: pointer;
-    margin-left: 1em;
-    background: #0000;
-    border: 1px solid var(--color-ContentBorders, #dfe6ec);
-    border-radius: var(--border-radius-buttons, 3px);
-    box-shadow: none;
-    color: var(--color-Text, #222);
-    display: inline-block;
-    font-size: .938rem;
-    font-weight: 400;
-    padding: 10px 18px;
-    text-align: center;
-}
+.rrze-typesettings {
+    button.btn {
+        cursor: pointer;
+        margin-left: 1em;
+        background: #0000; // Transparent background
+        border: 1px solid var(--color-ContentBorders, #dfe6ec);
+        border-radius: var(--border-radius-buttons, 3px);
+        box-shadow: none;
+        color: var(--color-Text, #222);
+        display: inline-block;
+        font-size: .938rem;
+        font-weight: 400;
+        padding: 10px 18px;
+        text-align: center;
 
-.rrze-typesettings button.btn img {
-    max-width: 100%;
-    height: auto;
-}
+        // Styles for images inside buttons
+        img {
+            max-width: 100%;
+            height: auto;
+        }
 
-.rrze-typesettings button.btn:hover,
-.rrze-typesettings button.btn:focus,
-.rrze-typesettings button.btn:active {
-    background: var(--color-StandardHellgrau, #e9edf2);
+        // Hover, focus, and active state styles for buttons
+        &:hover,
+        &:focus,
+        &:active {
+            background: var(--color-StandardHellgrau, #e9edf2);
+        }
+    }
 }
 
 .typesettings-copy-img {
@@ -37,15 +41,16 @@
     border-radius: 6px;
     display: none;
     margin-top: 10px;
-}
 
-.typesettings-tooltip::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: -5px;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: transparent black transparent transparent;
+    // Tooltip arrow styling
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -5px;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent black transparent transparent;
+    }
 }

@@ -24,11 +24,15 @@ function incrementVersion(version, type) {
 }
 
 // Function to update the version in a file
-function updateVersionInFile(filePath, oldVersion, newVersion) {
+function updateVersionInFile(filePath, newVersion) {
     try {
         let content = fs.readFileSync(filePath, 'utf8');
-        const regex = new RegExp(oldVersion.replace(/\./g, '\\.'), 'g');
-        content = content.replace(regex, newVersion);
+        const regexVersion = new RegExp(`(Version:\\s*)(.+)`, 'g');
+        const regexStableTag = new RegExp(`(Stable tag:\\s*)(.+)`, 'g');
+
+        content = content.replace(regexVersion, `$1${newVersion}`);
+        content = content.replace(regexStableTag, `$1${newVersion}`);
+
         fs.writeFileSync(filePath, content, 'utf8');
         console.log(`Updated version in ${filePath}`);
     } catch (error) {
@@ -62,7 +66,7 @@ try {
 try {
     // Update Stable tag in README.md
     if (fs.existsSync(readmePath)) {
-        updateVersionInFile(readmePath, `Stable tag: ${oldVersion}`, `Stable tag: ${newVersion}`);
+        updateVersionInFile(readmePath, newVersion);
     } else {
         console.warn(`File ${readmePath} not found.`);
     }
@@ -73,7 +77,7 @@ try {
 try {
     // Update version in PLUGIN-NAME.php
     if (fs.existsSync(pluginFilePath)) {
-        updateVersionInFile(pluginFilePath, `Version: ${oldVersion}`, `Version: ${newVersion}`);
+        updateVersionInFile(pluginFilePath, newVersion);
     } else {
         console.warn(`File ${pluginFilePath} not found.`);
     }

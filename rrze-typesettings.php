@@ -4,9 +4,9 @@
 Plugin Name:     RRZE Typesettings
 Plugin URI:      https://github.com/RRZE-Webteam/rrze-typesettings/
 Description:     Plugin zur Darstellung von Code
-Version: 1.2.11
+Version:         1.2.4
 Requires at least: 6.4
-Requires PHP:      8.2
+Requires PHP:    8.2
 Author:          RRZE Webteam
 Author URI:      https://blogs.fau.de/webworking/
 License:         GNU General Public License v2
