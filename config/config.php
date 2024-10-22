@@ -81,7 +81,7 @@ function getShortcodeSettings() {
                         'val' => __( 'Default', 'rrze-typesettings' )
                     ],
                     [
-                        'id' => 'light.min',
+                        'id' => 'light',
                         'css' => 'prism-solarizedlight.min.css',
                         'val' => __( 'Light', 'rrze-typesettings' )
                     ],

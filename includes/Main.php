@@ -4,6 +4,8 @@ namespace RRZE\Typesettings;
 
 defined('ABSPATH') || exit;
 
+use RRZE\Typesettings\CustomException;
+
 use RRZE\Typesettings\Shortcode;
 
 /**
@@ -44,24 +46,45 @@ class Main
     }
 
 
-    public function register_assets(){
+    public function register_assets()
+    {
         wp_register_script(
             'rrze-typesettings',
             plugins_url('build/rrze-typesettings.min.js', plugin_basename($this->pluginFile)),
-            ['wp-i18n'], // Ensure wp-i18n is loaded for translations
+            ['wp-i18n', 'jquery'],
             filemtime(plugin_dir_path($this->pluginFile) . 'build/rrze-typesettings.min.js'),
             true
-        );        
+        );
 
-        wp_set_script_translations('rrze-typesettings', 'rrze-typesettings', plugin_dir_path($this->pluginFile) . 'languages');
-        
-        wp_register_style('rrze-typesettings', plugins_url('build/rrze-typesettings.min.css', plugin_basename($this->pluginFile)), [], filemtime(plugin_dir_path($this->pluginFile) . 'build/rrze-typesettings.min.css'));
-        wp_register_script('prismjs', plugins_url('build/prism.js', plugin_basename($this->pluginFile)), [], null, true);
+        wp_set_script_translations('rrze-typesettings', 'rrze-typesettings', plugin_dir_path($this->pluginFile) . 'languages'); 
+
+        wp_register_style(
+            'rrze-typesettings',
+            plugins_url('build/rrze-typesettings.min.css', plugin_basename($this->pluginFile)),
+            [],
+            filemtime(plugin_dir_path($this->pluginFile) . 'build/rrze-typesettings.min.css')
+        );
+
+        wp_register_script(
+            'prismjs',
+            plugins_url('assest/js/prism.min.js', plugin_basename($this->pluginFile)),
+            [],
+            null,
+            true
+        );
+
+        wp_register_style(
+            'prismjs',
+            plugins_url('assets/css/prism.min.css', plugin_basename($this->pluginFile)),
+            [],
+            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.min.css')
+        );
     }
 
-    public function enqueue_assets(){
+    public function enqueue_assets()
+    {
         wp_enqueue_script('rrze-typesettings');
-        wp_enqueue_style('rrze-typesettings');        
+        wp_enqueue_style('rrze-typesettings');
     }
 
 }

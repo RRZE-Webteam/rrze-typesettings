@@ -23,15 +23,16 @@ class Shortcode
     public function enqueue_assets($theme, $lang)
     {
         $this->theme_css = $this->get_theme_css_from_settings($this->settings['highlight-code']['theme']['values'], $theme);
-        $this->lang_js = $this->get_lang_from_settings($this->settings['highlight-code']['lang']['values'], $lang);
+
+        echo '<pre>';
+        var_dump($this->settings['highlight-code']['theme']['values']);
+        exit;
 
         wp_enqueue_script('rrze-typesettings');
         wp_enqueue_style('rrze-typesettings');
 
-        wp_enqueue_style('prismjs');
         wp_enqueue_style('prismjs', plugins_url('assets/css/' . $this->theme_css, plugin_basename($this->pluginFile)));
         wp_enqueue_script('prismjs');
-        wp_enqueue_script('prism-lang', plugins_url('assets/js/prism-' . $this->lang_js . '.min.js', plugin_basename($this->pluginFile)), ['prismjs'], null, false);
 
         if (!empty($this->linenumbers)) {
             wp_enqueue_script('prismjs-linenumbers', plugins_url('assets/js/prism-line-numbers.min.js', plugin_basename($this->pluginFile)), ['prismjs', 'prism-lang'], null, false);
@@ -79,7 +80,7 @@ class Shortcode
         return $output;
     }
 
-    private function get_theme_css_from_settings($theme_options, $theme)
+    private function get_theme_css_from_settings($theme_options, $theme = '')
     {
         if (is_null($theme)) {
             return 'prism.min.css';
