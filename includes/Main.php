@@ -62,7 +62,7 @@ class Main
             'rrze-typesettings',
             plugins_url('build/rrze-typesettings.min.css', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'build/rrze-typesettings.min.css')
+            filemtime(plugin_dir_path($this->pluginFile) . 'build/css/rrze-typesettings.min.css')
         );
 
         wp_register_script(
@@ -77,7 +77,7 @@ class Main
             'prismjs',
             plugins_url('assets/css/prism.min.css', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.min.css')
+            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.css')
         );
     }
 
