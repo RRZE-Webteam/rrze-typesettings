@@ -60,24 +60,24 @@ class Main
 
         wp_register_style(
             'rrze-typesettings',
-            plugins_url('build/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)),
+            plugins_url('build/css/rrze-typesettings.css', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'build/css/rrze-typesettings.min.css')
+            filemtime(plugin_dir_path($this->pluginFile) . 'build/css/rrze-typesettings.css')
         );
 
         wp_register_script(
             'prismjs',
-            plugins_url('assest/js/prism.min.js', plugin_basename($this->pluginFile)),
+            plugins_url('assets/js/prism.js', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'assest/js/prism.min.js'),
+            filemtime(plugin_dir_path($this->pluginFile) . 'assets/js/prism.js'),
             true
         );
 
         wp_register_style(
             'prismjs',
-            plugins_url('assets/css/prism.min.css', plugin_basename($this->pluginFile)),
+            plugins_url('assets/css/prism.css', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.min.css')
+            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.css')
         );
     }
 
