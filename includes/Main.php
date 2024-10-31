@@ -50,29 +50,26 @@ class Main
     {
         wp_register_script(
             'rrze-typesettings',
-            plugins_url('build/rrze-typesettings.min.js', plugin_basename($this->pluginFile)),
+            plugins_url('build/js/rrze-typesettings.min.js', plugin_basename($this->pluginFile)),
             ['wp-i18n', 'jquery'],
-            filemtime(plugin_dir_path($this->pluginFile) . 'build/rrze-typesettings.min.js'),
+            filemtime(plugin_dir_path($this->pluginFile) . 'build/js/rrze-typesettings.min.js'),
             true
         );
 
         wp_set_script_translations('rrze-typesettings', 'rrze-typesettings', plugin_dir_path($this->pluginFile) . 'languages'); 
 
-        $is_dev = defined('WP_DEBUG') && WP_DEBUG;
-        $css_file = $is_dev ? 'build/css/rrze-typesettings.css' : 'build/css/rrze-typesettings.min.css';
-
         wp_register_style(
             'rrze-typesettings',
-            plugins_url($css_file, plugin_basename($this->pluginFile)),
+            plugins_url('build/css/rrze-typesettings.min.css', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . $css_file)
+            filemtime(plugin_dir_path($this->pluginFile) . 'build/css/rrze-typesettings.min.css')
         );
-        
+
         wp_register_script(
             'prismjs',
             plugins_url('assest/js/prism.min.js', plugin_basename($this->pluginFile)),
             [],
-            null,
+            filemtime(plugin_dir_path($this->pluginFile) . 'assest/js/prism.min.js'),
             true
         );
 
@@ -80,7 +77,7 @@ class Main
             'prismjs',
             plugins_url('assets/css/prism.min.css', plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.css')
+            filemtime(plugin_dir_path($this->pluginFile) . 'assets/css/prism.min.css')
         );
     }
 

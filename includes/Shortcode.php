@@ -24,20 +24,11 @@ class Shortcode
     {
         $this->theme_css = $this->get_theme_css_from_settings($this->settings['highlight-code']['theme']['values'], $theme);
 
-        echo '<pre>';
-        var_dump($this->settings['highlight-code']['theme']['values']);
-        exit;
-
         wp_enqueue_script('rrze-typesettings');
         wp_enqueue_style('rrze-typesettings');
 
         wp_enqueue_style('prismjs', plugins_url('assets/css/' . $this->theme_css, plugin_basename($this->pluginFile)));
         wp_enqueue_script('prismjs');
-
-        if (!empty($this->linenumbers)) {
-            wp_enqueue_script('prismjs-linenumbers', plugins_url('assets/js/prism-line-numbers.min.js', plugin_basename($this->pluginFile)), ['prismjs', 'prism-lang'], null, false);
-            wp_enqueue_style('prismjs-linenumbers', plugins_url('assets/css/prism-line-numbers.min.css', plugin_basename($this->pluginFile)), ['prismjs']);
-        }
     }
 
     public function render_shortcode_highlight_code($atts, $content = null)

@@ -1,5 +1,13 @@
 // Styles for the input field border in the editor
 .wp-block-create-block-rrze-typesettings {
+
+	.bk-test0{
+		background-color: #f7f7f7;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		min-height: 100px;
+		padding: 10px;
+	}
 	pre {
 		border: 1px solid #ddd;
 		padding: 10px;
@@ -21,4 +29,13 @@
 	.block-editor-block-icon {
 		color: #007cba;
 	}
+
+	.bk-test {
+		background-color: #f7f7f7;
+		border: 1px solid #ddd;
+		border-radius: 4px;
+		min-height: 100px;
+		padding: 10px;
+	}
+
 }
