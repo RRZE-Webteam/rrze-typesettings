@@ -58,13 +58,16 @@ class Main
 
         wp_set_script_translations('rrze-typesettings', 'rrze-typesettings', plugin_dir_path($this->pluginFile) . 'languages'); 
 
+        $is_dev = defined('WP_DEBUG') && WP_DEBUG;
+        $css_file = $is_dev ? 'build/css/rrze-typesettings.css' : 'build/css/rrze-typesettings.min.css';
+
         wp_register_style(
             'rrze-typesettings',
-            plugins_url('build/rrze-typesettings.min.css', plugin_basename($this->pluginFile)),
+            plugins_url($css_file, plugin_basename($this->pluginFile)),
             [],
-            filemtime(plugin_dir_path($this->pluginFile) . 'build/css/rrze-typesettings.min.css')
+            filemtime(plugin_dir_path($this->pluginFile) . $css_file)
         );
-
+        
         wp_register_script(
             'prismjs',
             plugins_url('assest/js/prism.min.js', plugin_basename($this->pluginFile)),
