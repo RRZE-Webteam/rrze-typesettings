@@ -1,6 +1,6 @@
 {
   "name": "rrze-typesettings",
-  "version": "1.2.20",
+  "version": "1.2.21",
   "description": "Plugin for displaying code and formulas",
   "author": "RRZE Webteam",
   "license": "GPL-2.0-or-later",
@@ -8,7 +8,7 @@
   "scripts": {
     "increment-version": "node increment-version.js patch",
     "start": "npm-run-all --parallel start:*",
-    "start:js": "wp-scripts start src/js --output-path=build/js --output-filename=rrze-typesettings.js",
+    "start:js": "wp-scripts start src/js --output-path=build/js",
     "start:css": "sass --watch src/scss:build/css --style compressed",
     "build": "wp-scripts build src/js/index.js src/js/rrze-typesettings.js --output-path=build/js && npm run build:css && npm run increment-version",
     "build:css": "sass src/scss:build/css --style compressed",
