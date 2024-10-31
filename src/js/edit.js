@@ -10,7 +10,7 @@ import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 import 'prismjs/components/prism-markup-templating';  
 import 'prismjs/components/prism-php'; 
 import 'prismjs/components/prism-javascript'; 
-import 'prismjs/components/prism-markup';  // Für HTML
+import 'prismjs/components/prism-markup';  // For HTML
 
 const Edit = (props) => {
     const { attributes: { content, alignment, linenumbers, theme, language, copy }, setAttributes, className } = props;
