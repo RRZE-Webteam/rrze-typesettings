@@ -38,8 +38,7 @@
       "default": true
     }
   },
-  "editorScript": "file:./build/index.js",
-  "script": "file:./build/frontend.js",
-  "style": "file:./build/style-index.css",
-  "editorStyle": "file:./build/editor-style.css"
+  "editorScript": "file:./index.min.js",
+  "viewScript": "file:./view.min.js",
+  "editorStyle": "file:./editor-style.css"
 }

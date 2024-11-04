@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(mycode)
                     .then(() => {
-                        showTooltip(__('Code copied!', 'rrze-typesettings'));
+                        showTooltip(rrzeTypesettings.codeCopied);
                     })
                     .catch(err => {
                         console.error('Copy failed:', err);
@@ -30,7 +30,7 @@ jQuery(document).ready(function ($) {
                 textArea.select();
                 try {
                     document.execCommand('copy');
-                    showTooltip(__('Code copied!', 'rrze-typesettings'));
+                    showTooltip(rrzeTypesettings.codeCopied);
                 } catch (err) {
                     console.error('Copy failed:', err);
                 } finally {

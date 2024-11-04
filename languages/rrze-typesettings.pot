@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: RRZE Typesettings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-18 17:22+0000\n"
+"POT-Creation-Date: 2024-11-03 21:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -36,51 +36,55 @@ msgctxt "block title"
 msgid "Code Highlighter RRZE"
 msgstr ""
 
-#: src/edit.js:75
+#: src/js/edit.js:73
 msgid "C"
 msgstr ""
 
-#: src/edit.js:77
+#: src/js/edit.js:75
 msgid "C#"
 msgstr ""
 
-#: src/edit.js:76
+#: src/js/edit.js:74
 msgid "C++"
 msgstr ""
 
-#: src/rrze-typesettings.js:17 src/rrze-typesettings.js:31
-msgid "Code copied!"
+#: src/js/rrze-typesettings.js:19
+msgid "Code copied! BKTEST"
 msgstr ""
 
-#: src/edit.js:70
+#: src/js/rrze-typesettings.js:33
+msgid "Code copied! BKTEST2"
+msgstr ""
+
+#: src/js/edit.js:68
 msgid "Code Settings"
 msgstr ""
 
-#: includes/Shortcode.php:74
+#: includes/Shortcode.php:66
 msgid "Copied to clipboard"
 msgstr ""
 
-#: config/config.php:130 includes/Shortcode.php:74 includes/Shortcode.php:74
+#: config/config.php:130 includes/Shortcode.php:66 includes/Shortcode.php:66
 msgid "Copy to clipboard"
 msgstr ""
 
-#: src/edit.js:78
+#: src/js/edit.js:76
 msgid "CSS"
 msgstr ""
 
-#: config/config.php:91 src/edit.js:97
+#: config/config.php:91 src/js/edit.js:95
 msgid "Dark"
 msgstr ""
 
-#: config/config.php:81 src/edit.js:95
+#: config/config.php:81 src/js/edit.js:93
 msgid "Default"
 msgstr ""
 
-#: src/edit.js:108
+#: src/js/edit.js:106
 msgid "Enable Copy to Clipboard"
 msgstr ""
 
-#: src/edit.js:124
+#: src/js/edit.js:122
 msgid "Enter your code here..."
 msgstr ""
 
@@ -96,7 +100,7 @@ msgstr ""
 msgid "Here comes the Context Help content."
 msgstr ""
 
-#: src/edit.js:79
+#: src/js/edit.js:77
 msgid "HTML"
 msgstr ""
 
@@ -108,23 +112,23 @@ msgstr ""
 msgid "https://github.com/RRZE-Webteam/rrze-typesettings/"
 msgstr ""
 
-#: src/edit.js:80
+#: src/js/edit.js:78
 msgid "Java"
 msgstr ""
 
-#: src/edit.js:81
+#: src/js/edit.js:79
 msgid "JavaScript"
 msgstr ""
 
-#: src/edit.js:82
+#: src/js/edit.js:80
 msgid "JSON"
 msgstr ""
 
-#: config/config.php:125 src/edit.js:72
+#: config/config.php:125 src/js/edit.js:70
 msgid "Language"
 msgstr ""
 
-#: config/config.php:86 src/edit.js:96
+#: config/config.php:86 src/js/edit.js:94
 msgid "Light"
 msgstr ""
 
@@ -132,7 +136,7 @@ msgstr ""
 msgid "Logfile"
 msgstr ""
 
-#: config/config.php:96 src/edit.js:98
+#: config/config.php:96 src/js/edit.js:96
 msgid "Okaidia"
 msgstr ""
 
@@ -140,7 +144,7 @@ msgstr ""
 msgid "Overview"
 msgstr ""
 
-#: src/edit.js:83
+#: src/js/edit.js:81
 msgid "PHP"
 msgstr ""
 
@@ -148,11 +152,11 @@ msgstr ""
 msgid "Plugin zur Darstellung von Code"
 msgstr ""
 
-#: src/edit.js:84
+#: src/js/edit.js:82
 msgid "Python"
 msgstr ""
 
-#: src/edit.js:85
+#: src/js/edit.js:83
 msgid "React"
 msgstr ""
 
@@ -177,11 +181,11 @@ msgstr ""
 msgid "Save Changes"
 msgstr ""
 
-#: config/config.php:71 src/edit.js:103
+#: config/config.php:71 src/js/edit.js:101
 msgid "Show line numbers"
 msgstr ""
 
-#: src/edit.js:86
+#: src/js/edit.js:84
 msgid "SQL"
 msgstr ""
 
@@ -201,10 +205,10 @@ msgid ""
 "WordPress version %2$s."
 msgstr ""
 
-#: config/config.php:101 src/edit.js:92
+#: config/config.php:101 src/js/edit.js:90
 msgid "Theme"
 msgstr ""
 
-#: src/edit.js:87
+#: src/js/edit.js:85
 msgid "XML"
 msgstr ""

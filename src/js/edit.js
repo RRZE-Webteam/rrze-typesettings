@@ -2,10 +2,8 @@ import { useBlockProps, BlockControls, InspectorControls, AlignmentToolbar } fro
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { createElement as el, useRef, useEffect } from '@wordpress/element';
 import { __ } from '@wordpress/i18n'; // Import the __ function for translations
-import Prism from 'prismjs';
-import 'prismjs/plugins/line-numbers/prism-line-numbers';
-import 'prismjs/themes/prism.css';
-import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
+import Prism from '../../assets/js/prism.js';
+import '../../assets/css/prism.css';
 
 import 'prismjs/components/prism-markup-templating';  
 import 'prismjs/components/prism-php'; 
@@ -67,9 +65,9 @@ const Edit = (props) => {
                 { key: 'settings' },
                 el(
                     PanelBody,
-                    { title: __('Code Settings', 'rrze-typesettings'), initialOpen: true }, // Translated title
+                    { title: __('Code Settings', 'rrze-typesettings'), initialOpen: true },
                     el(SelectControl, {
-                        label: __('Language', 'rrze-typesettings'), // Translated label
+                        label: __('Language', 'rrze-typesettings'),
                         value: language,
                         options: [
                             { label: __('C', 'rrze-typesettings'), value: 'c' },

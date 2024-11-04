@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: RRZE Typesettings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-10-18 17:22+0000\n"
-"PO-Revision-Date: 2024-10-18 17:49+0000\n"
+"PO-Revision-Date: 2024-11-03 21:10+0000\n"
 "Last-Translator: \n"
 "Language-Team: Deutsch\n"
 "Language: de_DE\n"
@@ -35,51 +35,55 @@ msgctxt "block title"
 msgid "Code Highlighter RRZE"
 msgstr "Code Highlighter RRZE"
 
-#: src/edit.js:75
+#: src/js/edit.js:73
 msgid "C"
 msgstr "C"
 
-#: src/edit.js:77
+#: src/js/edit.js:75
 msgid "C#"
 msgstr "C#"
 
-#: src/edit.js:76
+#: src/js/edit.js:74
 msgid "C++"
 msgstr "C++"
 
-#: src/rrze-typesettings.js:17 src/rrze-typesettings.js:31
-msgid "Code copied!"
-msgstr "Code kopiert!"
+#: src/js/rrze-typesettings.js:19
+msgid "Code copied! BKTEST"
+msgstr "Code kopiert! BK TEST"
 
-#: src/edit.js:70
+#: src/js/rrze-typesettings.js:33
+msgid "Code copied! BKTEST2"
+msgstr "Code kopiert BKTEST2"
+
+#: src/js/edit.js:68
 msgid "Code Settings"
 msgstr "Code-Einstellungen"
 
-#: includes/Shortcode.php:74
+#: includes/Shortcode.php:66
 msgid "Copied to clipboard"
 msgstr "In die Zwischenablage kopiert"
 
-#: config/config.php:130 includes/Shortcode.php:74 includes/Shortcode.php:74
+#: config/config.php:130 includes/Shortcode.php:66 includes/Shortcode.php:66
 msgid "Copy to clipboard"
 msgstr "In die Zwischenablage kopieren"
 
-#: src/edit.js:78
+#: src/js/edit.js:76
 msgid "CSS"
 msgstr "CSS"
 
-#: config/config.php:91 src/edit.js:97
+#: config/config.php:91 src/js/edit.js:95
 msgid "Dark"
 msgstr "Dunkel"
 
-#: config/config.php:81 src/edit.js:95
+#: config/config.php:81 src/js/edit.js:93
 msgid "Default"
 msgstr "Standard"
 
-#: src/edit.js:108
+#: src/js/edit.js:106
 msgid "Enable Copy to Clipboard"
 msgstr "In die Zwischenablage kopieren aktivieren"
 
-#: src/edit.js:124
+#: src/js/edit.js:122
 msgid "Enter your code here..."
 msgstr "Geben Sie Ihren Code hier ein..."
 
@@ -95,7 +99,7 @@ msgstr "Allgemein"
 msgid "Here comes the Context Help content."
 msgstr "Hier kommt der Kontext-Hilfetext."
 
-#: src/edit.js:79
+#: src/js/edit.js:77
 msgid "HTML"
 msgstr "HTML"
 
@@ -107,23 +111,23 @@ msgstr "https://blogs.fau.de/webworking/"
 msgid "https://github.com/RRZE-Webteam/rrze-typesettings/"
 msgstr "https://github.com/RRZE-Webteam/rrze-typesettings/"
 
-#: src/edit.js:80
+#: src/js/edit.js:78
 msgid "Java"
 msgstr "Java"
 
-#: src/edit.js:81
+#: src/js/edit.js:79
 msgid "JavaScript"
 msgstr "JavaScript"
 
-#: src/edit.js:82
+#: src/js/edit.js:80
 msgid "JSON"
 msgstr "JSON"
 
-#: config/config.php:125 src/edit.js:72
+#: config/config.php:125 src/js/edit.js:70
 msgid "Language"
 msgstr "Sprache"
 
-#: config/config.php:86 src/edit.js:96
+#: config/config.php:86 src/js/edit.js:94
 msgid "Light"
 msgstr "Hell"
 
@@ -131,7 +135,7 @@ msgstr "Hell"
 msgid "Logfile"
 msgstr "Protokolldatei"
 
-#: config/config.php:96 src/edit.js:98
+#: config/config.php:96 src/js/edit.js:96
 msgid "Okaidia"
 msgstr "Okaidia"
 
@@ -139,7 +143,7 @@ msgstr "Okaidia"
 msgid "Overview"
 msgstr "Überblick"
 
-#: src/edit.js:83
+#: src/js/edit.js:81
 msgid "PHP"
 msgstr "PHP"
 
@@ -147,11 +151,11 @@ msgstr "PHP"
 msgid "Plugin zur Darstellung von Code"
 msgstr "Plugin zur Darstellung von Code"
 
-#: src/edit.js:84
+#: src/js/edit.js:82
 msgid "Python"
 msgstr "Python"
 
-#: src/edit.js:85
+#: src/js/edit.js:83
 msgid "React"
 msgstr "React"
 
@@ -176,11 +180,11 @@ msgstr "RRZE Webteam auf Github"
 msgid "Save Changes"
 msgstr "Änderungen speichern"
 
-#: config/config.php:71 src/edit.js:103
+#: config/config.php:71 src/js/edit.js:101
 msgid "Show line numbers"
 msgstr "Zeilennummern anzeigen"
 
-#: src/edit.js:86
+#: src/js/edit.js:84
 msgid "SQL"
 msgstr "SQL"
 
@@ -204,10 +208,10 @@ msgstr ""
 "Der Server läuft auf WordPress-Version %1$s. Das Plugin benötigt mindestens "
 "WordPress-Version %2$s."
 
-#: config/config.php:101 src/edit.js:92
+#: config/config.php:101 src/js/edit.js:90
 msgid "Theme"
 msgstr "Theme"
 
-#: src/edit.js:87
+#: src/js/edit.js:85
 msgid "XML"
 msgstr "XML"
