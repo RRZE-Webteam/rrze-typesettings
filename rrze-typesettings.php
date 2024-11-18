@@ -4,7 +4,7 @@
 Plugin Name:     RRZE Typesettings
 Plugin URI:      https://github.com/RRZE-Webteam/rrze-typesettings/
 Description:     Plugin to display code highlighting
-Version:         1.2.25
+Version:         1.3.0
 Requires at least: 6.4
 Requires PHP:    8.2
 Author:          RRZE Webteam
