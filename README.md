@@ -13,7 +13,7 @@ Author URI: https://blogs.fau.de/webworking/
 Text Domain: rrze-typesettings
 Domain Path: /languages
 
-Plugin to display code highlighting.
+Plugin to display code highlighting. 
 
 
 # RRZE-Typesettings
