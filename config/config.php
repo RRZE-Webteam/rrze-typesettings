@@ -39,7 +39,7 @@ function getHelpTab()
         [
             'id' => 'rrze-typesettings-help',
             'content' => [
-                '<p>' . __('Here comes the Context Help content.', 'rrze-typesettings') . '</p>'
+                '<p>' . __('Placeholder for Context Help.', 'rrze-typesettings') . '</p>'
             ],
             'title' => __('Overview', 'rrze-typesettings'),
             'sidebar' => sprintf('<p><strong>%1$s:</strong></p><p><a href="https://blogs.fau.de/webworking">RRZE Webworking</a></p><p><a href="https://github.com/RRZE Webteam">%2$s</a></p>', __('For more information', 'rrze-typesettings'), __('RRZE Webteam on Github', 'rrze-typesettings'))
@@ -77,22 +77,22 @@ function getShortcodeSettings() {
                 'values' => [
                     [
                         'id' => 'default',
-                        'css' => 'prism.min.css',
+                        'css' => 'prismjs-default',
                         'val' => __( 'Default', 'rrze-typesettings' )
                     ],
                     [
                         'id' => 'light',
-                        'css' => 'prism-solarizedlight.min.css',
+                        'css' => 'prismjs-solarizedlight',
                         'val' => __( 'Light', 'rrze-typesettings' )
                     ],
                     [
                         'id' => 'dark',
-                        'css' => 'prism-dark.min.css',
+                        'css' => 'prismjs-dark',
                         'val' => __( 'Dark', 'rrze-typesettings' )
                     ],
                     [
                         'id' => 'okaidia',
-                        'css' => 'prism-okaidia.min.css',
+                        'css' => 'prismjs-okaidia',
                         'val' => __( 'Okaidia', 'rrze-typesettings' )
                     ],
                 ],

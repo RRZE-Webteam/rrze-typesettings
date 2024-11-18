@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (theme === 'light') {
             await import('../../assets/css/prism-solarizedlight.css');
         } else {
-            await import('../../assets/css/prism.css');  // Default theme
+            await import('../../assets/css/prism-default.css');  // Default theme
         }
         
         block.classList.add(`language-${language}`);  // Add the language class to the block

@@ -1,9 +1,9 @@
 import { useBlockProps, BlockControls, InspectorControls, AlignmentToolbar } from '@wordpress/block-editor';
 import { PanelBody, SelectControl, ToggleControl } from '@wordpress/components';
 import { createElement as el, useRef, useEffect } from '@wordpress/element';
-import { __ } from '@wordpress/i18n'; // Import the __ function for translations
+import { __ } from '@wordpress/i18n';
 import Prism from '../../assets/js/prism.js';
-import '../../assets/css/prism.css';
+import '../../assets/css/prism-default.css';
 
 import 'prismjs/components/prism-markup-templating';  
 import 'prismjs/components/prism-php'; 
@@ -65,7 +65,7 @@ const Edit = (props) => {
                 { key: 'settings' },
                 el(
                     PanelBody,
-                    { title: __('Code Settings', 'rrze-typesettings'), initialOpen: true },
+                    { title: __('Settings', 'rrze-typesettings'), initialOpen: true },
                     el(SelectControl, {
                         label: __('Language', 'rrze-typesettings'),
                         value: language,
@@ -130,5 +130,14 @@ const Edit = (props) => {
         )
     );
 };
+
+
+
+console.log(__('Enter your code here...', 'rrze-typesettings'));
+
+console.log(window.wp && window.wp.i18n ? 'i18n is loaded' : 'i18n is not loaded');
+
+
+
 
 export default Edit;
