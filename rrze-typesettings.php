@@ -3,10 +3,10 @@
 /*
 Plugin Name:     RRZE Typesettings
 Plugin URI:      https://github.com/RRZE-Webteam/rrze-typesettings/
-Description:     Plugin zur Darstellung von Code
-Version:         1.2.3
+Description:     Plugin to display code highlighting
+Version:         1.2.25
 Requires at least: 6.4
-Requires PHP:      8.2
+Requires PHP:    8.2
 Author:          RRZE Webteam
 Author URI:      https://blogs.fau.de/webworking/
 License:         GNU General Public License v2
@@ -58,6 +58,8 @@ add_action('plugins_loaded', __NAMESPACE__ . '\loaded');
 function load_textdomain()
 {
     load_plugin_textdomain('rrze-typesettings', false, sprintf('%s/languages/', dirname(plugin_basename(__FILE__))));
+
+
 }
 
 /**
@@ -105,11 +107,6 @@ function deactivation()
 }
 
 
-function rrze_typesettings_init()
-{
-    register_block_type(__DIR__ . '/build');
-}
-
 /**
  * Wird durchgeführt, nachdem das WP-Grundsystem hochgefahren
  * und alle Plugins eingebunden wurden.
@@ -133,7 +130,4 @@ function loaded()
         $main = new Main(__FILE__);
         $main->onLoaded();
     }
-
-    add_action('init', __NAMESPACE__ . '\rrze_typesettings_init');
-
 }

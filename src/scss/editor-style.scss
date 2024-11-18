@@ -1,0 +1,24 @@
+// Styles for the input field border in the editor
+.wp-block-create-block-rrze-typesettings {
+	pre {
+		border: 1px solid #ddd;
+		padding: 10px;
+		background-color: #f7f7f7;
+		border-radius: 4px;
+		min-height: 100px;
+	}
+
+	// Styles when the block is selected in the editor
+	&.is-selected {
+
+		pre {
+			border: 2px solid #007cba;
+			background-color: #fff;
+		}
+	}
+
+	// Optional: Style for the icon in the editor (optional, if needed)
+	.block-editor-block-icon {
+		color: #007cba;
+	}
+}

@@ -1,17 +1,15 @@
 {
   "$schema": "https://schemas.wp.org/trunk/block.json",
   "apiVersion": 3,
-  "name": "create-block/rrze-typesettings",
+  "name": "rrze-typesettings/code-highlighter",
   "title": "Code Highlighter RRZE",
-  "version": "1.2.3",
-  "description": "A block to show code highlighting",
+  "description": "A block to display code highlighting",
   "category": "text",
   "icon": "editor-code",
   "keywords": [
     "highlight",
     "code"
   ],
-  "textdomain": "rrze-typesettings",
   "attributes": {
     "content": {
       "type": "string",
@@ -40,7 +38,7 @@
     }
   },
   "editorScript": "file:./index.js",
-  "script": "file:./frontend.js",
-  "style": "file:./style-index.css",
-  "editorStyle": "file:./editor-style.css"
+  "viewScript": "file:./view.js",
+  "editorStyle": "file:./editor-style.css",
+  "textdomain": "rrze-typesettings"
 }
